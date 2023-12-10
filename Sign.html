@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/jpg" href="img/logo.png">
+    <title>Cancereta</title>
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+    <link rel="stylesheet" href="css/sign.css" />
+    <title>Sign in & Sign up Form</title>
+    <style>
+      a
+      {
+        color: #fff;
+        text-decoration: none;
+        
+      }
+      a:hover{
+        color: var(--main-color);
+      }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="forms-container">
+
+            <div class="signin-signup">
+                <!-- Login-->
+                <form action="#" class="sign-in-form">
+                    <h2 class="title">Sign in</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Email"  id="emailLogIn" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password" id="inputPassword"/>
+                    </div>
+                    <input type="button" value="Login" class="btn solid" id="logIn" />
+                </form>
+                <!-- First Signup-->
+                <form action="#" class="sign-up-form" id="sign-up-form-1">
+                    <h2 class="title">Sign up</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Username" id="lname" required="" />
+                        <div class="error"></div>
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="Email" id="email" key="emailKey"  required="" />
+                        <div class="error"></div>
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password" id="password" required="" />
+                        <div class="error"></div>
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="number" placeholder="Age" id="age" />
+                        <div class="error"></div>
+                    </div>
+                    <div class="input-field">
+                      <i class="fa-solid fa-phone"></i>
+                        <input type="number" placeholder="Phone" id="phone" />
+                        <div class="error"></div>
+                    </div>
+                    <div class="input-field">
+                      <i class="fas fa-envelope"></i>
+                        <select name="dep" id="inputState" placeholder="Phone" style="border: none; background: none;">
+                            <option value="general" id="general">Gender..</option>
+                            <option value="Male" id="security">Male</option>
+                            <option value="Female" id="mediacl">Female</option>
+                    </select><br>
+                        <div class="error"></div>
+                    </div>
+                    <div class="input-field">
+                      <i class="fa-solid fa-location-arrow"></i>
+                        <input type="text" placeholder="Address" id="address" />
+                        <div class="error"></div>
+                    </div>
+                    <input type="submit" class="btn" value="Signup" id="send"  />
+
+                </form>
+               
+            </div>
+        </div>
+
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>New here ?</h3>
+                    <p>
+                        If you don't have an account please sign up in our website to enjoy our services.
+                    </p>
+                    <div class="row">
+                    	<button class="btn transparent col-sm-7 p-2">
+	                        <a href="Doctor Register.html" target="_blank">Sign up as a doctor</a>
+	                    </button>
+	                    <button class="btn transparent col-sm-7 p-2" id="sign-up-btn">
+	                        Sign up as a patient
+	                    </button>
+                    </div>
+                    
+
+                </div>
+                <img src="img/log.svg" class="image" alt="" />
+            </div>
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>One of us ?</h3>
+                    <p>
+                        If you already have an account please login to be sure for existing your account.
+                    </p>
+                    <button class="btn transparent" id="sign-in-btn">
+                        Sign in
+                    </button>
+                </div>
+                <img src="img/register.svg" class="image" alt="" />
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
+    import {
+      getAuth,
+      createUserWithEmailAndPassword,signInWithEmailAndPassword, sendPasswordResetEmail
+    } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
+    import {
+      getStorage,
+      ref,
+      uploadBytesResumable,
+      getDownloadURL,
+    } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-storage.js";
+    import {
+      getFirestore,
+      doc,
+      getDoc,
+      setDoc,
+      collection,
+      addDoc,
+      updateDoc,
+      serverTimestamp,query, where,getDocs
+    } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-firestore.js";
+    const firebaseConfig = {
+      apiKey: "AIzaSyBt4dnGARtW0fnugmHOopbNZyI9rfglz80",
+      authDomain: "graduation-project-a1c89.firebaseapp.com",
+      databaseURL:
+        "https://graduation-project-a1c89-default-rtdb.firebaseio.com",
+      projectId: "graduation-project-a1c89",
+      storageBucket: "graduation-project-a1c89.appspot.com",
+      messagingSenderId: "742395953187",
+      appId: "1:742395953187:web:48576f2e94aca323b9f196",
+      measurementId: "G-C6SSJZYJ0D",
+    };
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const db = getFirestore(app);
+    const auth = getAuth(app);
+    const storage = getStorage();
+    ///LogIn user//////
+    var adminArr=[];
+    var doctorArr=[];
+    var userArr=[];
+    var pharmacyUser=[];
+    const currentTime = new Date();
+          var year = currentTime.getFullYear();
+          var month = currentTime.getMonth();
+          var day = currentTime.getDate();
+          var dash = "-";
+          var space = " ";
+          var colon = ":";
+          var dot = "."
+          var hour = currentTime.getHours();
+          var minutes = currentTime.getMinutes();
+          var seconds = currentTime.getSeconds();
+          var millsecond = currentTime.getMilliseconds();
+          var timestamp = year + dash + month + dash+ day+ space+ hour+ colon+ minutes+ colon+ seconds+dot+millsecond;
+    var logBtn=document.getElementById("logIn");
+
+    const q = query(collection(db, "user"), where("type", "==", "admin"));
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+     adminArr.push(doc.data().email);
+    });
+    const q1 = query(collection(db, "user"), where("type", "==", "doctor"));
+    const querySnapshot1 = await getDocs(q1);
+    querySnapshot1.forEach((doc) => {
+      doctorArr.push(doc.data().email);
+    });
+    const q2 = query(collection(db, "user"), where("type", "==", "pharmacyDoctor"));
+    const querySnapshot2 = await getDocs(q2);
+    querySnapshot1.forEach((doc) => {
+      pharmacyUser.push(doc.data().email);
+    });
+    
+  logBtn.addEventListener('click',async function(){
+    var error=false;
+    var email=document.getElementById("emailLogIn").value;
+    var password=document.getElementById("inputPassword").value;
+   
+  signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => 
+  {
+    const user = userCredential.user;
+    if (adminArr.includes(email)==true) {
+        window.location="dashboard.html";
+    }
+    else if(doctorArr.includes(email)==true)
+    {
+      async function aa(){
+      const q = query(collection(db, "doctor"), where("email", "==",email));
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        console.log(doc.id);
+      localStorage.setItem("uIdDoctor",doc.id);
+       });
+      }
+       aa();
+        window.location="profile.html";
+    }
+    else if(pharmacyUser.includes(email)==true)
+    {
+       //window.location="profile.html"
+    }
+    else
+    {
+      async function aa()
+      {
+        const q = query(collection(db, "doctor"), where("email", "==",email));
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+          console.log(doc.id);
+        localStorage.setItem("userDocRefId",doc.id);
+        });
+      }
+      aa();
+      window.location="profilePatient.html";
+    }
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+     error=true;
+     alert("please check your E-mail or password");
+  });
+  })
+
+
+////////////////////////////////////////////////
+    var btnIn = document.getElementById("send");
+    btnIn.addEventListener("click", async function () {
+        var ref = collection(db, "patient");
+        var ref1 = collection(db, "user");
+        var ageInput = document.getElementById("age").value;
+        var emailInput = document.getElementById("email").value;
+        var fullnameInput = document.getElementById("lname").value;
+        var genderInput = document.getElementById("inputState").value;
+        //var imageInput = document.getElementById("image").value;
+        var phoneInput = document.getElementById("phone").value;
+        var passwordInput = document.getElementById("password").value;
+        var addressInput = document.getElementById("address").value;
+
+        console.log(emailInput + "  " + passwordInput);
+        createUserWithEmailAndPassword(auth, emailInput, passwordInput)
+          .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            console.log("created");
+            // ...
+          })
+          .catch(function (error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            if (errorCode == "auth/weak-password") {
+              alert("The password is too weak.");
+            } else if (errorCode == "auth/email-already-in-use") {
+              alert("The email is already taken.");
+            } else if (errorCode == "auth/weak-passwordInput") {
+              alert("Password is weak");
+            } else {
+              alert("Error = ",errorMessage);
+            }
+            console.log(error);
+          });
+
+        const docRef = await addDoc(ref, {
+          age: ageInput,
+          email: emailInput,
+          fullName: fullnameInput,
+          gender: genderInput,
+          phone: phoneInput,
+          address: addressInput
+        });
+        
+         localStorage.setItem("uIdPatient", docRef.id);
+         localStorage.setItem("nameUser", fullnameInput);
+        const updateTimestamp = await updateDoc(docRef, {
+          timestamp: timestamp,
+          uId: docRef.id,
+        });
+        const docRef1 = await addDoc(ref1, {
+          type: "patient",
+          email: emailInput
+        });
+        const updateTimestamp1 = await updateDoc(docRef1, {
+          uId: docRef1.id,
+        }).then(() => {
+          alert("Data added successfully");
+          console.log("Id = " + docRef.id);
+          window.location = "patientProfile.html";
+        });
+      });
+
+     </script>
+<script src="js/sign1.js"></script>
+<!-- <script src="js/validiton.js"></script> -->
+</html>

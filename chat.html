@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ar-en" dir="ltr">
+	<meta charset="utf-8">
+	<head>
+		<title>Cancereta</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" type="image/jpg" href="img/logo.png">
+
+		<!-- libraries for font awesome -->
+		<link rel="stylesheet" type="text/css" href="css/all.min.css">
+		<link rel="stylesheet" type="text/css" href="css/fontawesome.min.css">
+ 
+		
+		 <link href="css/bootstrap.min.css" rel="stylesheet">
+  		<script src="js/bootstrap.min.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="css/chat.css">
+		<script type="text/javascript">
+			async function fun(the){
+
+				const element = document.querySelectorAll(".clic");
+				for(var i=0;i<element.length;i++){
+				   element[i].classList.remove("clic");
+				}
+				localStorage.setItem("id_patient","aLll1hN5NnfcuFwar1Zw1n6Jlyz1");
+				localStorage.setItem("id_doctor",the);
+				getid=document.getElementById(the);
+				getid.classList.add("clic");
+				var nameD=document.getElementById("nameSelect");
+				var idname=document.getElementById(the);
+				nameD.innerHTML=idname.innerHTML;
+			}
+
+		</script>
+	</head>
+	<body>		
+		<main class="row m-0 p-0">
+			<div class="col-sm-8 full-h p-0">
+				<div class=" bg-light">
+					<nav class="navbar navbar-light bg-light p-0 m-0">
+					  <div class="container-fluid">
+					    <a class="navbar-brand" id="nameSelect">
+					    </a>
+					    <form class="d-flex">
+					    	<a href=""><i class="fa-brands fa-facebook mx-3 social"></i></a>
+					      	<a href=""><i class="fa-brands fa-twitter social"></i></a>
+					    </form>
+					  </div>
+					</nav>
+				</div>
+				<div class="h-100 w-100 bg-light rounded-top scroll py-3" id="Question">
+			
+				</div>
+				<div class="d-flex align-items-end flex-column bd-highlight mb-3">
+				  <div class="mt-auto w-100 p-0">
+				  	<div class="btn-group w-100 bg-light" role="group" aria-label="Basic mixed styles example">
+					  	<input type="text" id="messagesend" class="form-control py-2" placeholder="Write Your Message" aria-label="Username" aria-describedby="basic-addon1" height="50px">
+					  	<button type="button" class="btn btn-info "><i class="fa-solid fa-location-arrow" id="btnSend"></i></button>
+					</div>
+				  </div>
+				</div>
+			</div>
+			<div class="col-sm-4 list p-0">
+				<nav class="navbar navbar-light bg-light p-0 mx-3 my-4">
+				  <div class="container-fluid navb">
+				    <a class="navbar-brand">
+				    	<img id="imageuser" width="60px" height="60px" class="rounded-circle"> 
+				    	<h3 class="d-inline" id="nameuser"></h3>
+				    </a>
+				  </div>
+				</nav>
+				<div class="px-3 back-color">
+					<input class="form-control search py-2" type="search" placeholder="Search Contacts" aria-label="Search">
+				</div>
+				<div class="px-0">
+					<div class="py-3">
+						<div id="scroll" class="m-0">
+							<ul class="list-group online" id="online">
+							  
+							</ul>
+						</div>
+					</div>								
+				</div>
+
+			</div>
+		</main>
+
+		<!-- library for jquery -->
+		<script src="js/jquery-3.6.0.min.js"></script>
+		<script type="module">
+			// Import the functions you need from the SDKs you need
+			import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+			import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
+			import { getAuth,createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
+			import { getStorage,ref, uploadBytesResumable,getDownloadURL } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-storage.js";
+			import { getFirestore,doc,getDoc,setDoc,collection,addDoc,updateDoc,serverTimestamp,getDocs } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-firestore.js";
+			import { onSnapshot ,orderBy,query} from "https://www.gstatic.com/firebasejs/9.6.8/firebase-firestore.js";
+			const firebaseConfig = {
+			  apiKey: "AIzaSyBt4dnGARtW0fnugmHOopbNZyI9rfglz80",
+			  authDomain: "graduation-project-a1c89.firebaseapp.com",
+			  databaseURL:
+				"https://graduation-project-a1c89-default-rtdb.firebaseio.com",
+			  projectId: "graduation-project-a1c89",
+			  storageBucket: "graduation-project-a1c89.appspot.com",
+			  messagingSenderId: "742395953187",
+			  appId: "1:742395953187:web:48576f2e94aca323b9f196",
+			  measurementId: "G-C6SSJZYJ0D",
+			};
+			const app = initializeApp(firebaseConfig);
+			const analytics = getAnalytics(app);
+			const db = getFirestore(app);
+			const auth = getAuth(app);
+			const storage = getStorage();
+			/////////////////////////List disgin//////////////////////////////
+
+///////////////////End code show list of doctors//////////////////////////////////////////////////
+ 
+function question(q_message,type){
+	var ques=document.getElementById("Question");
+	var div=document.createElement("div");
+	var div1=document.createElement("div");
+	var img=document.createElement("img");
+
+	ques.appendChild(div).classList.add("d-flex" ,"justify-content-end","old");
+	
+	if(type=="image"){
+		div.appendChild(div1).classList.add("badge" ,"text-wrap" ,"p-1" ,"w-50" ,"mt-3", "bg-left","me-1","height");
+		div1.appendChild(img).classList.add("w-100","h-100");
+		img.src=q_message;
+	}else{
+		div.appendChild(div1).classList.add("badge" ,"text-wrap" ,"p-3" ,"w-50" ,"mt-3", "bg-left","me-1","height");
+		div1.innerHTML=q_message;
+	}	
+}
+
+function answer(ans_message,type){
+	var ques=document.getElementById("Question");
+	var div=document.createElement("div");
+	var div1=document.createElement("div");
+	var span=document.createElement("span");
+	var i=document.createElement("i");
+	var img=document.createElement("img");
+
+	ques.appendChild(div).classList.add("d-flex" ,"justify-content-start","old");
+	div.appendChild(span).classList.add("l-triangle", "align-self-end");
+    span.appendChild(i).classList.add("fa-solid", "fa-play" ,"color-right");
+    if(type=="image"){
+		div.appendChild(div1).classList.add("badge" ,"text-wrap" ,"p-1" ,"w-50" ,"mt-3", "bg-right","height");
+		div1.appendChild(img).classList.add("w-100","h-100");
+		img.src=ans_message;
+	}else{
+		div.appendChild(div1).classList.add("badge" ,"text-wrap" ,"p-3" ,"w-50" ,"mt-3", "bg-right","height");
+		div1.innerHTML=ans_message;
+	}	
+	
+}
+
+function list(name,image,id){
+	var ul=document.getElementById("online");
+    var li=document.createElement("li");
+    var div1=document.createElement("div");
+    var img=document.createElement("img");
+    var span=document.createElement("span");
+
+    ul.appendChild(li);
+  	li.classList.add("py-0","list-group-item","border-0", "d-flex","justify-content-between","align-items-center","border-bottom","ms-3");
+    li.appendChild(div1);
+    li.style.cursor = "pointer";
+    li.setAttribute("id",id);
+    li.setAttribute("value",name);
+    li.setAttribute("onclick","fun(this.id);");
+    div1.appendChild(img);
+    img.classList.add("rounded-circle","avatar","m-2","me-2");
+    img.src = image;
+    img.setAttribute("width","45px");
+    img.setAttribute("height","45px");
+    div1.appendChild(span);
+    span.innerHTML=name;
+    // funnnnn(name);
+}
+function funnnnn(name){
+	//console.log(name);
+}
+///////////////////////////////////Add message////////////////////////////////////////////////////////////
+const currentTime = new Date();
+          var year = currentTime.getFullYear();
+          var month = currentTime.getMonth();
+          var day = currentTime.getDate();
+          var dash = "-";
+          var space = "T";
+          var colon = ":";
+          var dot = "."
+          var hour = currentTime.getHours();
+          var minutes = currentTime.getMinutes();
+          var seconds = currentTime.getSeconds();
+          var millsecond = currentTime.getMilliseconds();
+          var timestamp = year + dash + month + dash+ day+ space+ hour+ colon+ minutes+ colon+ seconds+dot+millsecond;
+	  const userDocRefId = localStorage.getItem("userDocRefId");
+
+      var btnIn = document.getElementById("btnSend");
+	  const docId = localStorage.getItem("id_sender");
+      
+      btnIn.addEventListener("click", async function () {
+
+        var messageInput = document.getElementById("messagesend").value;
+        const ref = collection(db, "doctor");
+        const ref1 = collection(db, "patient");
+        const doctorsDocs = await getDocs(ref);
+        const patientsDocs = await getDocs(ref1);
+
+        const doctorDocRef = await doctorsDocs.docs.find(
+        (doc) => doc.id === docId     
+        ).ref;
+        const v = doc(doctorDocRef, "chats",userDocRefId);
+        const usersDocs = await getDoc(v);
+        if (usersDocs.exists()) 
+        {
+              const userDocRef = await usersDocs.docs.find(
+              (doc) => doc.id === docId
+            ).ref;
+            const v1 = collection(userDocRef,"messages");
+            const addressesCol = await addDoc(v1,{ 
+              dateTime:timestamp,
+              senderId:userDocRefId,
+              receiverId:docId,
+              text:messageInput,
+			  type:"text"
+            });
+            if (addressesCol) alert("Your message send"); 
+        } 
+        else 
+        {
+            const v1 = collection(v,"messages");
+            const addressesCol = await addDoc(v1,{ 
+              dateTime:timestamp,
+              senderId:userDocRefId,
+              receiverId:docId,
+              text:messageInput,
+			  type:"text"
+            });
+            if (addressesCol) alert("Your message send"); 
+        }
+        const patientDocRef = await patientsDocs.docs.find(
+        (doc) => doc.id === userDocRefId     
+        ).ref;
+        const vPa = doc(patientDocRef, "chats",docId);
+        const usersDocs1 = await getDoc(vPa);
+        if (usersDocs1.exists()) 
+        {
+            const userDocRef = await usersDocs1.docs.find(
+              (doc) => doc.id ===userDocRefId
+            ).ref;
+            const v11 = collection(userDocRef,"messages");
+            const addressesCol = await addDoc(v11,{ 
+              dateTime:timestamp,
+              senderId:userDocRefId,
+              receiverId:docId,
+              text:messageInput,
+			  type:"text"
+            });
+            if (addressesCol) alert("Your message send"); 
+            var messageInput = (document.getElementById("messagesend").value = "");
+        } 
+        else 
+        {
+            console.log("No such document!");
+            const v11 = collection(vPa,"messages");
+            const addressesCol = await addDoc(v11,{ 
+              dateTime:timestamp,
+              senderId:userDocRefId,
+              receiverId:docId,
+              text:messageInput,
+			  type:"text"
+            });
+            if (addressesCol) alert("Your message send"); 
+            var messageInput = (document.getElementById("messagesend").value = "");
+        }
+      });
+
+//////////////////////////////////////////End the code add message////////////////////v
+
+
+//////////////////////////////////////show doctors///////////////////////////////////
+var counter=0;
+async function GetAllData(){
+	let id_patient=localStorage.getItem("id_patient");
+	var arridsres=[],arridsdoc=[];
+
+	let resrvCollectionRefdata = collection(db, `patient/${id_patient}/reservation`);  
+    const GroupDocsdata = await getDocs(resrvCollectionRefdata);
+    GroupDocsdata.forEach(async(item) =>{
+      arridsres.push(item.id);
+    });
+
+  for(var i=0;i<arridsres.length;i++){
+  	let resrvCollectionRefdataids = collection(db, `reservation`);  
+    const GroupDocsdata1 = await getDocs(resrvCollectionRefdataids);
+    GroupDocsdata1.forEach(async(item) =>{
+      if(item.id==arridsres[i]){
+    		arridsdoc.push(item.data().doctorId);
+    	}
+    });
+  }
+	for(var j=0;j<arridsdoc.length;j++){
+		counter=0;
+		let docdataidsres = collection(db, `doctor`);  
+	    const GroupDocsdata2 = await getDocs(docdataidsres);
+	    GroupDocsdata2.forEach(async(item) =>{
+	      counter++;
+		 if(counter==8){
+		 	document.getElementById('scroll').classList.add("scrolllist")
+		 }
+		 if(item.id==arridsdoc[j])
+			list(item.data().fullName,item.data().image,item.id);
+	    });
+		 
+		}
+	 
+}
+window.onload=GetAllData();
+////////////////////////////////////End code show doctor////////////////////////////
+
+//////////////////////////find message from firebase////////////////////////////////
+	localStorage.setItem("id_doctor","6zMzMDyDg6Roej7snIEvKm8a0zF2");
+	localStorage.setItem("id_patient","M8IR5iDvdHR2oKjB92X3MQQAaWm2");
+	let id_doctor=localStorage.getItem("id_doctor");
+	let id_patient=localStorage.getItem("id_patient");
+
+//////////////////////////////////////Acsess Message By snapshot////////////////////////////////
+      var clear=document.querySelectorAll(".old");
+      for(var i=0;i<clear.length;i++){
+      	clear[i].remove();
+      }
+      let chatCollectionRef = query(collection(db, `patient/${id_patient}/chats/${id_doctor}/messages`),orderBy("dateTime"));  
+	    onSnapshot(chatCollectionRef, { includeMetadataChanges: true }, (snapshot) => {
+	    snapshot.docChanges().forEach((item) => {
+	        if(item.doc.data().senderId==id_patient)
+	      		question(item.doc.data().text,item.doc.data().type);
+	      	else
+	      		answer(item.doc.data().text,item.doc.data().type);
+	        const source = snapshot.metadata.fromCache ? "local cache" : "server";
+	    	});
+      	});
+
+//////////////////////////////////////End Acsess Message By snapshot////////////////////////////////
+
+/////////////////////////end find message///////////////////////////////////////////
+
+  let patientdata = collection(db, `patient`);  
+  const datapatient = await getDocs(patientdata);
+  datapatient.forEach(async(item) =>{
+  	if(item.id==id_patient){
+  		var nameuser=document.getElementById("nameuser");
+		var imageuser=document.getElementById("imageuser");
+		nameuser.innerHTML=item.data().fullName;
+		imageuser.src=item.data().image;
+  	}
+  });
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,193 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- For Responsive mobile -->
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="shortcut icon" type="image/jpg" href="img/logo.png">
+     <link rel="stylesheet" href="css/bootstrap.min.css" >
+     <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+     <link rel="stylesheet" href="css/all.min.css">
+     <link rel="stylesheet" href="css/profile.css"> 
+</head>
+    <body>
+       
+      <section class="container">
+        <section class="row myProfile mb-2">
+            <div class="col-sm-11 m-auto py-3">
+                <h1>Our Orders</h1>
+            </div>
+        </section>
+        <section class="row  con py-4 ">
+            <section id="profileComment" class="comment contentRight col-sm-8 border-start">
+              <!-- <h1 class=" d-block">Comments</h1><br> -->
+              <div class="comments d-block w-100">
+            
+              </div>
+            </section>
+            <di class="col-md-4">
+              <img class="w-100 h-100" src="https://www.ennaharonline.com/wp-content/uploads/2021/07/pharmacy.jpg">
+            </div>
+        </section>
+    </section>
+        <!-- <script src="js/profile.js"></script> -->
+        <script type="module">
+         // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        updateEmail,
+        updatePassword 
+      } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+      import { getDatabase } from 'https://www.gstatic.com/firebasejs/9.6.8/firebase-database.js'
+      import {
+        getFirestore,
+        doc,
+        getDoc,
+        setDoc,
+        collection,
+        addDoc,
+        updateDoc ,serverTimestamp,query,where,getDocs,orderBy,onSnapshot, deleteField 
+      } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-firestore.js";
+      import {
+        getStorage, uploadBytesResumable, getDownloadURL
+      } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-storage.js";
+      const firebaseConfig = {
+        apiKey: "AIzaSyBt4dnGARtW0fnugmHOopbNZyI9rfglz80",
+        authDomain: "graduation-project-a1c89.firebaseapp.com",
+        databaseURL:
+          "https://graduation-project-a1c89-default-rtdb.firebaseio.com",
+        projectId: "graduation-project-a1c89",
+        storageBucket: "graduation-project-a1c89.appspot.com",
+        messagingSenderId: "742395953187",
+        appId: "1:742395953187:web:48576f2e94aca323b9f196",
+        measurementId: "G-C6SSJZYJ0D",
+      };
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      const db = getFirestore(app);
+      const auth = getAuth(app);
+      const storage = getStorage(app);
+      const database = getDatabase(app);
+
+/////////////////////////comments
+var count=0;                    //rate,comment,name,birthday,time
+
+function data_of_pharmacy(type,id,image,name,phone,location,tratment,date,time){
+  var perant=document.querySelector(".comments");
+  var div0=document.createElement("div");
+    var div1=document.createElement("div");
+    var div2=document.createElement("div");
+    var div3=document.createElement("div");
+    var div4=document.createElement("div");
+    var div5=document.createElement("div");
+    var div6=document.createElement("div");
+    var div7=document.createElement("div");
+    var div8=document.createElement("div");
+    var div9=document.createElement("div");
+    var div10=document.createElement("div");
+    var div11=document.createElement("div");
+    var div12=document.createElement("div");
+    var div13=document.createElement("div");
+
+    var img0=document.createElement("img");
+    var h5=document.createElement("h5");
+    var span0=document.createElement("apan");
+    var span1=document.createElement("apan");
+    var span2=document.createElement("apan");
+    var span3=document.createElement("apan");
+    var span4=document.createElement("apan");
+    var span5=document.createElement("apan");
+    var span6=document.createElement("apan");
+    var span7=document.createElement("apan");
+    var a0=document.createElement("a");
+    var a1=document.createElement("a");
+    var i0=document.createElement("i");
+    var i1=document.createElement("i");
+    var i2=document.createElement("i");
+    var i3=document.createElement("i");
+    var btn1=document.createElement("button");
+    
+
+    perant.appendChild(div0).classList.add("my-3");
+    div0.appendChild(div1).classList.add("card" ,"border" ,"border-info", "rounded-3");
+    div1.appendChild(div2).classList.add("row" ,"g-0" ,"p-3");
+    div1.appendChild(div3).classList.add("card-footer", "d-flex", "justify-content-around");
+    div2.appendChild(div4).classList.add("col-md-2" ,"p-3");
+    div2.appendChild(div5).classList.add("col-md-8");
+    div2.appendChild(div9).classList.add("col-md-2","h-100","d-flex","align-items-end");
+    div4.appendChild(img0).classList.add("img-fluid" ,"w-100","h-50","rounded-circle", "border" ,"border-info");
+    img0.src=image;
+    div5.appendChild(div6).classList.add("card-body" ,"ps-0");
+    div6.appendChild(h5).classList.add("card-title" ,"name");
+    div6.appendChild(div11).classList.add("mb-1");
+    div6.appendChild(div12).classList.add("mb-3");
+    div6.appendChild(div13);
+    div11.appendChild(i2).classList.add("fa-solid", "fa-phone-flip","me-1","i-main")
+    div11.appendChild(span0).classList.add("text-muted");
+    span0.innerHTML=phone;
+    div12.appendChild(i3).classList.add("fa-solid", "fa-location-dot","me-1","i-main")
+    div12.appendChild(span7).classList.add("text-muted");
+    span7.innerHTML=location;
+    if(type=="medicineName"){
+       var medecineName= tratment.split("-");
+      for(var i=0;i<medecineName.length;i++){
+        var x="span"+(8+i);
+        var x=document.createElement("apan");
+        div13.appendChild(x).classList.add("rounded-pill","btnstyle","p-2","me-1")
+        x.innerHTML=medecineName[i]
+      }
+    }
+    else{
+      var img1=document.createElement("img");
+      div13.appendChild(img1).classList.add("img-thumbnail");
+      img1.src=tratment;
+      img1.setAttribute("onclick","func()")
+    }
+    h5.innerHTML=name;
+    div3.appendChild(div7);
+    div3.appendChild(div8);
+    div7.appendChild(i0).classList.add("fa-solid", "fa-calendar-check" );
+    div7.appendChild(span1).innerHTML=" "+date;
+    div8.appendChild(i1).classList.add("fa-solid", "fa-clock");
+    div8.appendChild(span2).innerHTML=" "+time;
+    div9.appendChild(div10).classList.add("row","card-body","ps-0","h-100");
+    div10.appendChild(span3).classList.add("col-md-12","px-1");
+    span3.appendChild(btn1);
+  
+    btn1.innerHTML="Done";
+    btn1.classList.add("bg","form-control","px-0","btnstyle");
+    btn1.setAttribute('id',id);
+    btn1.setAttribute("onclick","fun(this.id)");
+}
+
+
+var mapatient = new Map();
+
+let commentCollectionRef1 = query(collection(db, `patient`));  
+  onSnapshot(commentCollectionRef1, { includeMetadataChanges: true }, (snapshot) => {
+  snapshot.docChanges().forEach((item) => {
+      mapatient.set(item.doc.id, [item.doc.data().image,item.doc.data().fullName]);
+      const source = snapshot.metadata.fromCache ? "local cache" : "server";
+  });
+});
+
+let commentCollectionRef = query(collection(db, `pharmacy`),orderBy("timestamp"));  
+  onSnapshot(commentCollectionRef, { includeMetadataChanges: true }, (snapshot) => {
+  snapshot.docChanges().forEach((item) => {
+    var arrdate = item.doc.data().timestamp.split(" ");
+    var id=item.doc.data().patient_id;
+    var values = Array.from(mapatient.get(id).values());
+    data_of_pharmacy(item.doc.data().type,item.doc.id,values[0],values[1],item.doc.data().phone,item.doc.data().address,item.doc.data().product,arrdate[0],arrdate[1]);
+    const source = snapshot.metadata.fromCache ? "local cache" : "server";
+  });
+});
+
+
+</script>     
+    </body>
+</html>

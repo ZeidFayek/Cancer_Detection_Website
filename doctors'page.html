@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ar-en" dir="ltr">
+	<meta charset="utf-8">
+	<head>
+		<title>Cancereta</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" type="image/jpg" href="img/logo.png">
+
+		<!-- libraries for font awesome -->
+		<link rel="stylesheet" type="text/css" href="css/all.min.css">
+		<link rel="stylesheet" type="text/css" href="css/fontawesome.min.css">
+
+		 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+		<link rel="stylesheet" type="text/css" href="css/doctors'page.css">
+
+<style>
+	a{
+		text-decoration: none;
+		color: var(--main-color);
+	}
+</style>
+	</head>
+	<body>		
+		<main class="py-5">
+			<div class="container">
+				<div class="card">
+				  <div class="card-body">
+				    <h3 class="card-title ">Best Doctors In Egypt</h3>
+				    <h6 class="card-subtitle mt-4 mb-2">Book online <i class="fa-solid fa-calendar-days"></i></h6>
+				    <p class="card-text"><span id="n-doctor"> </span> Doctors - More than <span id="n-specialist"></span> Specialties.</p>
+				  </div>
+				</div>
+
+				<div>
+					<div class="d-flex bd-highlight">
+					  <div class="p-2 flex-fill bd-highlight bg-light rounded-start btn-group px-0 py-0 border border-secondary">
+
+						 
+						  	<!-- <button class="btn btn-lg dropdown-toggle py-2 btns" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+						  		<i class="fa-solid fa-stethoscope"></i> choose specialty
+						    </button> -->
+							<select id="specialtySelect" class="form-select" name="specialty" required>
+								 
+								<option selected>choose specialty...</option>
+								<option>Lung Cancer</option>
+								<option>colon cancer</option>
+								<option>Pancreas Cancer</option>
+								<option>brain cancer</option>
+								<option>Prostate and breast cancer</option>
+								<option>Esophageal cancer</option>
+								<option>Liver Cancer</option>
+								<option>bone cancer</option>
+							  </select>
+							  <select id="citySelect" class="form-select" name="city" required>
+								 
+								<option selected>choose city...</option>
+								<option>Cairo</option>
+								<option>Alexandria</option>
+								<option>Ismailia</option>
+								<option>Aswan</option>
+								<option>Assiut</option>
+								<option>Luxor</option>
+								<option>Beheira</option>
+								<option>Beni Suef</option>
+								<option>Port Said</option>
+								<option>South Sinai</option>
+								<option>Giza</option>
+							  </select>
+						    <!-- <ul class=" dropdown-menu ulsp" id="specialty">
+								<li class="dropdown-item">Lung Cancer</li>
+								<li class="dropdown-item">Bowel cancer</li>
+								<li class="dropdown-item">Prostate and breast cancer</li>
+								<li class="dropdown-item">Pancreas cancer</li>
+								<li class="dropdown-item">Esophageal cancer</li>
+								<li class="dropdown-item">Liver Cancer</li>
+								<li class="dropdown-item">Bladder Cancer</li>
+								<li class="dropdown-item">brain cancer</li>
+								<li class="dropdown-item">bone cancer</li>
+							</ul> -->
+
+						  <!-- <ul class="dropdown-menu" id="specialty"> -->
+						    <!-- <li><a class="dropdown-item">Another action</a></li>
+						    <li><a class="dropdown-item">Something else here</a></li>
+						    
+						    <li><a class="dropdown-item">Separated link</a></li> -->
+						  <!-- </ul> -->
+<!-- 
+
+							    <ul class="dropdown-options">
+							      <li class="option">
+							        <a href="#">A</a>
+							      </li>
+							      <li class="option">
+							        <a href="#">B</a>
+							      </li>
+							      <li class="option">
+							        <a href="#">C</a>
+							      </li>
+							      <li class="option">
+							        <a href="#">D</a>
+							      </li>
+							    </ul> -->
+
+
+					  </div>
+					  <!-- <div class="p-2 flex-fill bd-highlight bg-light rounded-0 btn-group px-0 py-0 border border-secondary">
+						  	<button class="btn btn-lg dropdown-toggle py-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+						    	<i class="fa-solid fa-location-dot"></i> choose city
+						  </button>
+						  <ul class="dropdown-menu" id="city">
+						    <li><a class="dropdown-item">Another action</a></li>
+						    <li><a class="dropdown-item">Something else here</a></li>
+						    <li><a class="dropdown-item">Separated link</a></li>
+						  </ul>
+					  </div> -->
+					  <!-- <div class="p-2 flex-fill bd-highlight bg-light rounded-0 btn-group px-0 py-0 border border-secondary">
+						  	<button class="btn btn-lg dropdown-toggle py-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+						    <i class="fa-solid fa-location-dot"></i> choose area
+						  </button>
+						  <ul class="dropdown-menu">
+						    <li><a class="dropdown-item" href="#">Action</a></li>
+						    <li><hr class="dropdown-divider"></li>
+						    <li><a class="dropdown-item" href="#">Another action</a></li>
+						    <li><a class="dropdown-item" href="#">Something else here</a></li>
+						    
+						    <li><a class="dropdown-item" href="#">Separated link</a></li>
+						  </ul>
+					  </div> -->
+					  <!-- <div class="p-2 flex-fill bd-highlight bg-light rounded-0 btn-group px-0 py-0 border border-secondary">
+						  	<button class="btn btn-lg dropdown-toggle py-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+						    <i class="fa-solid fa-umbrella-simple"></i> choose insurance
+						  </button>
+						  <ul class="dropdown-menu">
+						    <li><a class="dropdown-item" href="#">Action</a></li>
+						    <li><hr class="dropdown-divider"></li>
+						    <li><a class="dropdown-item" href="#">Another action</a></li>
+						    <li><a class="dropdown-item" href="#">Something else here</a></li>
+						    
+						    <li><a class="dropdown-item" href="#">Separated link</a></li>
+						  </ul>
+					  </div> -->
+					  <div class="p-2 flex-fill bd-highlight bg-light rounded-0 btn-group px-0 py-0 border border-secondary">
+					  		<input type="text" id="nameSearch" name="fname" placeholder="Enter Doctor's Name" class="w-100 px-2">
+					  </div>
+					  <div class="p-2 flex-fill bd-highligh bg rounded-end btn-group px-0 py-0 border border-secondary">
+						  	<button class="btn btn-lg py-2 bg" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="btnSearch">
+						    <i class="fa-solid fa-magnifying-glass"></i> search
+						  </button>
+					  </div>
+					</div>
+				</div>
+			</div>
+		</main>
+                                        
+		<section class="sec1 p-5">
+			<div class="container-fluid px-5">
+				<div class="row ">
+					
+					<div class="left col-md-12">
+						<nav class="navbar navbar-light bg-light">
+						  <div class="container-fluid">
+						    <a class="navbar-brand">All Specialities <span class="text-muted"><span class="rounded-circle py-2 px-3" id="ndoctor"></span> Doctors</span></a>
+						    <form class="d-flex">
+						    	<label class="text-muted me-3 mt-1" type="submit">Sorting:</label>
+						      	<div class="dropdown me-1">
+								    <button type="button" class="btn btn-secondary text-muted bg-white dropdown-toggle px-5 but" id="dropdownMenuOffset" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
+								      From newest to oldest
+								    </button>
+								    <div class="dropdown-menu p-2 my-3" aria-labelledby="dropdownMenuOffset">
+								    	<div class="form-check">
+										  <input class="form-check-input rad" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="From newest to oldest" checked onclick="radiobtn();">
+										  <label class="form-check-label" for="flexRadioDefault1">
+										    From newest to oldest
+										  </label>
+										</div>
+										<div class="form-check">
+										  <input class="form-check-input rad" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="Top Rate" onclick="radiobtn();" >
+										  <label class="form-check-label" for="flexRadioDefault2">
+										    Top Rate
+										  </label>
+										</div>
+										<div class="form-check">
+										  <input class="form-check-input rad" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="Price Low To High" onclick="radiobtn();">
+										  <label class="form-check-label" for="flexRadioDefault2">
+										    Price Low To High
+										  </label>
+										</div>
+										<div class="form-check">
+										  <input class="form-check-input rad" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="Price High To Low" onclick="radiobtn();">
+										  <label class="form-check-label" for="flexRadioDefault2">
+										    Price High To Low
+										  </label>
+										</div>
+								    </div>
+								  </div>
+						    </form>
+						  </div>
+						</nav>
+
+						<div id="card">
+							<!-- <div class="card my-3 p-4 remove">
+							  <div class="row g-0">
+							    <div class="col-md-2">
+
+							      <img src="img/Lem0oo.jpeg" class="img-fluid rounded-circle h-50">
+							      <div class="position-relative h-50 my-0">
+							      	<span class="d-flex position-absolute top-50 start-50 translate-middle style px-4 maincolor">
+							      		<i class="fa-solid fa-comments border border-info fs-4 p-2"> </i> 
+							      		<i class="fa-solid fa-video ms-2 border border-info fs-4 p-2"></i>
+							      	</span>
+							  	  </div>
+							    </div>
+							    <div class="col-md-5">
+							      <div class="card-body">
+							        <h5 class="card-title mb-0 maincolor"><span>Doctor</span> <small class="large">Lamiaa Mohamed</small></h5>
+							        <p class="card-text mb-0"><small class="text-muted">Consultant of anorectal surgery,general surgery</small></p>
+							        <p class="mt-2 mb-0 yellow"><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star-half-stroke"></i></p>
+							        <p class="card-text mb-3 extra-small"><small class="text-muted">Over Rating From 343 Visitors</small></p>
+							        <p class="card-text mb-1 extra-small">
+							        	<span>General Surgeon </span>
+							        	<span class="text-muted">Specialized in</span>
+							        	<span> Adult Gastroenterological Surgery</span></p>
+							        <p class="card-text mb-1 extra-small"><small class="text-muted">El-Mohandessin : Sudan</small></p>
+							        <p class="card-text mb-1 extra-small"><small class="text-muted">Fees:300 EGP</small></p>
+							        <p class="card-text mb-1 extra-small">Waiting Time:18 Minute</p>
+							        <p class="card-text extra-small"><small class="text-muted">1726-Cost of regular Call</small></p>
+							        
+							      </div>
+							    </div>
+ -->
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////// -->
+
+							  </div>
+							</div> 
+
+
+						</div>
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<section class="px-5 sec2">
+			<div class="px-4 mx-2">
+			<div class="container-fluid">
+				<div class="py-5">
+						<div class="accordion" id="accordionPanelsStayOpenExample">
+						  <div class="accordion-item">
+						    <h2 class="accordion-header" id="panelsStayOpen-headingOnes">
+						      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOnes" aria-expanded="false" aria-controls="panelsStayOpen-collapseOnes">
+						        How Can I Search and Book Same Day Appointment with the best Doctor?
+						      </button>
+						    </h2>
+						    <div id="panelsStayOpen-collapseOnes" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOnes">
+						      <div class="accordion-body">
+						      Go to Vezeeta.com or Download Vezeeta App where you can search for a Doctor in any specialty around your area. To book an appointment on the same day, just choose “Today” from the “Availability” filter and choose the time that suits you.
+						      </div>
+						    </div>
+						  </div>
+						  <div class="accordion-item">
+						    <h2 class="accordion-header" id="panelsStayOpen-headingTwos">
+						      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwos" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwos">
+						        How Can I Find the best Doctor That Accepts My Medical Insurance Plan?
+						      </button>
+						    </h2>
+						    <div id="panelsStayOpen-collapseTwos" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwos">
+						      <div class="accordion-body">
+						      	Vezeeta allows you to book appointments with a Doctor who accepts your medical insurance. Just choose your medical insurance provider from the “My Insurance” filter at the top of the page and book in less than a minute.
+						      </div>
+						    </div>
+						  </div>
+						  <div class="accordion-item">
+						    <h2 class="accordion-header" id="panelsStayOpen-headingThrees">
+						      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThrees" aria-expanded="false" aria-controls="panelsStayOpen-collapseThrees">
+						        How to Book an Online Appointment with A Doctor?
+						      </button>
+						    </h2>
+						    <div id="panelsStayOpen-collapseThrees" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThrees">
+						      <div class="accordion-body">
+						        	Vezeeta is a free internet booking service; it helps patients to find the best Doctor or doctors in any other specialty around your area and book appointments immediately. You can also specify your medical insurance provider, if available, and choose the day and time that suits you.
+						      </div>
+						    </div>
+						  </div>
+
+						  <div class="accordion-item">
+						    <h2 class="accordion-header" id="panelsStayOpen-headingFours">
+						      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFours" aria-expanded="false" aria-controls="panelsStayOpen-collapseFours">
+						        Can I choose a Doctor based on gender?
+						      </button>
+						    </h2>
+						    <div id="panelsStayOpen-collapseFours" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFours">
+						      <div class="accordion-body">
+								When you search for the best Doctor through Vezeeta, you can filter your search, based on doctor’s gender, besides many other search filtration options.
+						      </div>
+						    </div>
+						  </div>
+
+						  <div class="accordion-item">
+						    <h2 class="accordion-header" id="panelsStayOpen-headingFives">
+						      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFives" aria-expanded="false" aria-controls="panelsStayOpen-collapseFives">
+						        How Can I Search for the best Doctor Based On a Higher Rate?
+						      </button>
+						    </h2>
+						    <div id="panelsStayOpen-collapseFives" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFives">
+						      <div class="accordion-body">
+						      		Vezeeta helps you find a Doctor according to actual patients’ ratings and reviews. Each time a patient completes his/ her online booked visit, he/she are invited to review and rate their experience.
+						      </div>
+						    </div>
+						  </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+			
+
+		<!-- library for jquery -->
+		<script src="js/jquery-3.6.0.min.js"></script>
+
+		<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+		<script type="text/javascript" src="js/doctors'page.js"></script>
+	</body>
+</html>

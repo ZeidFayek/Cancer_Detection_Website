@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- For Responsive mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/jpg" href="img/logo.png">
+    <title>Cancereta</title>
+     <link rel="stylesheet" href="css/bootstrap.min.css" >
+     <link rel="stylesheet" href="css/jquery.floatingscroll.css">
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+     <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+     <link rel="stylesheet" href="css/all.min.css">
+     <link rel="stylesheet" href="css/style.css">     
+  </head>
+  <header>
+<div class="container ">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-1 position-fixed fixed-top w-100">
+          <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-4">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="index.html"><img src="images/logo/image.png"></a>
+                    </li>
+                </ul> 
+              <ul class="navbar-nav ms-auto  mb-lg-0">
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Home 
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="cancer.html">About Cancer</a></li>
+                        <li><a class="dropdown-item" href="doctors'page.html" target="_blank">Our doctors</a></li>
+                        <li><a class="dropdown-item" href="doctors'page.html">Online consultation</a></li>
+                        <li><a class="dropdown-item" href="doctors'page.html" target="_blank">Book now</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#special_link" id="navbarDropdownMenuLink" id="special" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           Specializations
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <li><a class="dropdown-item" href="cancerLung.html">Lung Cancer</a></li>
+                          <li><a class="dropdown-item" href="cancerLung.html">Bowel cancer</a></li>
+                          <li><a class="dropdown-item" href="cancerLung.html">Prostate and breast cancer</a></li>
+                          <li><a class="dropdown-item" href="#">Pancreas cancer</a></li>
+                          <li><a class="dropdown-item" href="#">Esophageal cancer</a></li>
+                          <li><a class="dropdown-item" href="#">Liver Cancer</a></li>
+                          <li><a class="dropdown-item" href="#">Bladder Cancer</a></li>
+                          <li><a class="dropdown-item" href="#">brain cancer</a></li>
+                          <li><a class="dropdown-item" href="#">bone cancer</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#Services-link">Services</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Detection 
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <li><a class="dropdown-item" href="LungText.php" target="_blank">Lung Cancer</a></li>
+                          <li><a class="dropdown-item" href="Syndrome.php">Colon Cancer</a></li>
+                        </ul>
+                      </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#">Success stories</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                      <a class="nav-link active" href="contactUs.html">Contact us</a>
+                    </li>
+              </ul>
+              <button type="button" class="btn btn-info mx-3"><a  id="btnBookDetect" href="doctors'page.html" target="_blank">Book now</a></button>
+
+              <div class="btn-group">
+                <button type="button" class="btn btn-info dropdown-toggle btn-hi" data-bs-toggle="dropdown" aria-expanded="false" id="nameUser">
+                  <p id="signOut" class="d-inline"></p>
+                  <script>
+                    var name = localStorage.getItem('nameUser')
+                    var n = name.split(" "); 
+                    document.getElementById('signOut').innerHTML ="Hi, "+n[0];
+                  </script>
+          
+              </button>
+              <ul class="dropdown-menu">
+                 <li><a id="signout" class="dropdown-item" onclick="logout();"  >Sign out</a></li>
+              </ul>
+            </div>
+            </div>
+          </div>
+    </nav>
+</div>
+</header>
+
+<body>
+<div class="home-back ">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                
+      <div class="carousel-item active">
+                    <div class="carousel-inner-img"></div>
+                    <div class="carousel-caption d-md-block">
+                        <h1>Better Healthcare for a Better Life</h1>
+                        <p>Book online or call  <img src="img/phone-solid.svg"> 16561</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-inner-img2"></div>
+                    <div class="carousel-caption d-md-block">
+                        <span>Wellcome to Medi Care</span>
+                         <p id="pBookDoc">Safe Your Own Health. Get<br> Best Service.</p><br>
+                         <a href="doctors'page.html"> <button type="button" class="btn btn-info">Book a Doctor</button></a>
+                    </div>
+                </div>
+    
+      <div class="carousel-item">
+                    <div class="carousel-inner-img1"></div>
+                    <div class="carousel-caption d-md-block">
+                         <p id="pBookCall">Telehealth, <br>Call consultation with doctor</p>
+                         <p>You can contact one of the doctors via video call and they will respond to you as soon as possible</p>
+                         <button type="button" class="btn btn-info"><a href="videoCall/index.html">Talk to the doctor</a></button>
+                    </div>
+                </div>
+              
+            </div>
+            <button class="carousel-control-prev p-2 border-start-0" type="button"
+                data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                <span class="position-relative" aria-hidden="true"><i
+                        class="carousel-control-icons fas fa-chevron-left fs-3 px-2"></i></span>
+                <span class="visually-hidden">Previous</span>
+                <div class="carousel-control-layer h-100 bg-white position-absolute start-0"></div>
+            </button>
+            <button class="carousel-control-next p-2 border-start-0" type="button"
+                data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                <span class="" aria-hidden="true"><i
+                        class="carousel-control-icons fas fa-chevron-right fs-3 px-2"></i></span>
+                <span class="visually-hidden">Next</span>
+                <div class="carousel-control-layer h-100 bg-white position-absolute start-0"></div>
+    
+            </button>
+        </div>
+        <a href="">
+            <div class="home-sidebar position-fixed start-0 bg-dark text-white rounded-end">
+                <i class="fas fa-cogs"></i>
+            </div>
+        </a>
+        <a class="text-decoration-none" href="#About">
+            <div class="home-mouse text-white border border-1">
+                <div class=" position-relative w-100 h-100 d-flex justify-content-center">
+                    <span class=" fs-1 fw-bolder position-absolute">.</span>
+                </div>
+            </div>
+        </a>
+</div>
+
+<!--Home content-->
+<button class="btn btn-info rounded-circle p-2" id="btn-fixed"><i class="fas fa-arrow-up"></i></button>
+<section id="stages">
+        <div class="homePart2 pb-5" data-aos="fade-up">
+                <div class="container stages">
+                    <h1 class="hide_color">ST.C</h1>
+                      <div class="pos">
+                          <h2><b>Stages of Cancer</b></h2><br><br>
+                          <div class="under_line"></div>
+                          <br><br>
+                          <h6>It is the process of determining how far cancer has progressed and spread in the body. Progression is determined by assigning a number from 1 to 4, where 1 means that the cancer has been isolated, and 4 means that the cancer has spread to the extent that it can be evaluated.</h6>
+                      </div>
+                      <div class="time">
+                          <h4 id="st0"><b>Stage (0)</b></h4><br><br>
+                          <h4 id="st1"><b>Stage (I)</b></h4><br><br>
+                          <h4 id="st2"><b>Stage (II)</b></h4><br><br>
+                          <h4 id="st3"><b>Stage (III)</b></h4><br><br>
+                          <h4 id="st4"><b>Stage (IV)</b></h4><br><br>
+                      </div>
+                      <div class="line"></div>
+                      <div class="circle">
+                          <div class="circle0"></div>
+                          <div class="circle0"></div>
+                          <div class="circle0"></div>
+                          <div class="circle0"></div>
+                          <div class="circle0"></div>    
+                      </div>
+              <div class="stageContent">
+                  <div id="stage0">
+                      <p><b>zero phase (0) :</b><br> It is the first stage, which indicates that there is no cancer, but there is an abnormal growth of cells, which is likely to turn into cancer.</p>
+                  </div>
+                  <div id="stage1">
+                      <p><b>Stage one (I) :</b><br>This is an early stage of cancer, which means a small tumor is confined to one specific area of ​​the body.</p>
+                  </div>
+                  <div id="stage2">
+                      <p><b>Stage Two (II) :</b><br>During which the tumor has grown larger, but has not yet spread to other areas of the body.</p>
+                  </div>
+                  <div id="stage3">
+                      <p><b>The third stage (III) :</b><br>During which the tumor has grown larger, but has not yet spread to other areas of the body.</p>
+                  </div>
+                  <div id="stage4">
+                      <p><b>The fourth stage (IV) :</b><br>If this stage of cancer is diagnosed, it means that the disease has spread to other parts of the body, and at this stage it is called secondary cancer.</p>
+                  </div>
+              </div>
+              
+                    
+                  </div>
+              </div>
+</section><section class="frame container py-5">
+                  <h3><b>What is cancer ? How is it formed ?</b></h3><br>
+                  <iframe width="75%" height="430px" src="https://www.youtube.com/embed/bQ-H-uwsI70" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </section> 
+
+<section id="special_link">
+    <div class="specialization">
+        <div class="container">
+            <div class="specialsed container col-lg-12">
+                <h1 class="hide_color">Specialization</h1>
+                <div class="pos">
+                <h1><b>Divided Into</b></h1>
+                </div> 
+            </div>
+            <div class="row">
+        <div class="p-4 col-lg-6" data-aos="fade-right">
+            <div class="bg-white border rounded p-4 mb-4 row">
+                <p class="baground_date p-2 col-sm-3">Lung Cancer</p>
+                <h6><b>What Is Lung Cancer?</b></h6>
+                <p>Lung Cancer is a type of cancer that starts in the lungs. Cancer starts when cells in the body begin to grow out of control. To learn more about how cancers start and spread, <a href="cancerLung.html">see What Is Cancer?</a></p>
+            </div>   
+        </div>
+        <div class="p-4 col-lg-6" data-aos="fade-left">
+            <div class="bg-white border rounded p-4 mb-4 row">
+                <p class="baground_date p-2 col-sm-3">Colon Cancer </p>
+                <h6><b>What Is Colon Cancer?</b></h6>
+                <p>Colon cancer is a type of cancer that begins in the large intestine (colon). The colon is the final part of the digestive tract.
+                Colon cancer typically affects older adults.<a href="#">see What Is Cancer?</a> </p>
+            </div>     
+        </div>
+                <div class="p-4 col-lg-6" data-aos="fade-right">
+                    <div class="cs bg-white border rounded p-4 mb-4 row">
+                        <p class="baground_date p-2 col-sm-3">Liver Cancer</p>
+                        <h6><b>What is liver cancer?</b></h6>
+                        <p>Liver cancer is a cancer that's found anywhere in the liver.
+                            The liver is a large organ at the top right side of your tummy.
+                            It helps you digest your food and removes toxins. <a href="#"> see What Is Cancer? </a></p>
+                    </div>             
+                </div>
+                <div class="p-4 col-lg-6" data-aos="fade-left">
+                    <div class="cs bg-white border rounded p-4 mb-4 row">
+                        <p class="baground_date p-2 col-sm-4">Esophageal cancer</p>
+                        <h6><b>What is Esophageal cancer?</b></h6>
+                        <p>is cancer arising from the esophagus—the food pipe that runs between the throat and the stomach.Symptoms often include difficulty in swallowing and weight loss, <a href="cancerLung.html"> see What Is Cancer? </a></p>
+                    </div>         
+                </div>
+                <div class="p-4 col-lg-6" data-aos="fade-left">
+                    <div class="cs bg-white border rounded p-4 mb-4 row" data-aos="fade-right">
+                        <p class="baground_date p-2 col-sm-3">Pancreas cancer</p>
+                        <h6><b>What is pancreatic cancer?</b></h6>
+                        <p>is a cancer that's found anywhere in the pancreas ,an organ in the top part of your tummy. It helps you digest your food and makes hormones, such as insulinHow, <a href="cancerLung.html">see What Is Cancer?</a></p>
+                    </div>          
+                </div>
+                <div class="p-4 col-lg-6" data-aos="fade-left">
+                    <div class="cs bg-white border rounded p-4 mb-4  rrow">
+                        <p class="baground_date p-2 col-sm-3">Breast cancer</p>
+                        <h6><b>What Is Breast Cancer?</b></h6>
+                        <p>Breast cancer is a type of cancer that starts in the breast. Cancer starts when cells begin to grow out of control. (To learn more about how cancers start and spread, <a href="cancerLung.html">see What Is Cancer? )</a> </p>
+                    </div>       
+                </div>
+            </div>   
+        </div>
+    </div> 
+</section>
+<section class="partNewServices p-4"   data-aos="fade-up"
+data-aos-anchor-placement="top-center">
+    <div class="newSerives">
+        <div class="container">
+                <p>New services for better healthcare</p>
+                <div class="contentParmacy">
+                    <div class="row">
+                        <div class="col-sm-8 p-4">
+                            <h2>Pharmacy</h2>
+                            <p>Get your medicine and all your pharmacy needs.</p>
+                            <button type="button" class="btn btn-light  btn-pharm"><a href="pharmacy.html" target="_blank">Place Order</a></button>
+                        </div>
+                        <div class="col-sm-4">
+                            <img src="img/pharmacy.jpg" class="w-100" >
+                        </div>
+                    </div>
+                </div>
+             
+            <div class="row content">
+                <div class="p-4 col-lg-6">
+                    <div class="Teleconsultation">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <img src="img/desktop.jpg">
+                            </div>
+                            <div class="col-sm-8 p-4">
+                                <h2><a href="videoCall/index.html">Teleconsultation</a></h2>
+                                <p>Schedule a voice or video call with a specialized doctor.</p>
+                                <a href="doctors'page.html" target="_blank">Book a Call</a><i class="far fa-arrow-alt-circle-right float-start mx-2  mt-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 col-lg-6">
+                    <div class="homeVisit">
+                        <div class="Teleconsultation">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <img src="images/Hand_CareRad.jpg" class="w-100" >
+                                </div>
+                                <div class="col-sm-8 p-4">
+                                    <h2>Cancer Detection</h2>
+                                    <p>Upload your analysis pictures or answer the question.</p>
+                                    Make A Detection <a href="LungText.php">Lung</a> or <a href="Syndrome.php">Colon Cancer</a><i class="far fa-arrow-alt-circle-right float-start mx-2 mt-1"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+</section>
+
+<section id="Services-link">
+    <div class="container" >
+        <div class="p-4 col-12 container">
+            <h1 class="hide_color">SERVICES </h1>
+        <div class="pos">
+            <h1><b>What Do We Do ?</b></h1>
+            <div class="under_line"></div>
+            </div>
+    <div class="row">        
+        <div class="p-4 col-lg-4" data-aos="fade-up-right">
+            <div class="info">
+                <img class="w-100 imgh" src="images/work/work-1.jpg">
+                <div class="row">
+                    <div class="p-4 col-lg-8">
+                        <h6><b>Detection Cancer</b></h6>
+                        <p><a href="LungText.php" target="_blank">Detect Now</a></p>
+                    </div>
+                    <div class=" col-sm-4 d-flex justify-content-center align-items-center">
+                        <i class="fas fa-plus-circle fa-3x "></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-4 col-lg-4" data-aos="fade-down">
+            <div class="info image">
+                <img class="w-100 imgh" src="images/work/work-2.jpg">
+                <div class="row">
+                    <div class="p-4 col-lg-8">
+                        <h6><b>Teleconsultation</b></h6>
+                        <p><a href="doctors'page.html" target="_blank">Book a Call</a></p>
+                    </div>
+                    <div class=" col-sm-4 d-flex justify-content-center align-items-center">
+                        <i class="fas fa-plus-circle fa-3x "></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-4 col-lg-4" data-aos="fade-up-right">
+            <div class="info">
+                <img class="w-100 imgh" src="images/work/work-3.jpg">
+                    <div class="row">
+                        <div class="p-4 col-lg-8">
+                            <h6><b>Home Visit</b></h6>
+                            <p><a href="homeVisit.html" target="_blank">Book a visit</a></p>
+                         </div>
+                         <div class=" col-sm-4 d-flex justify-content-center align-items-center">
+                            <i class="fas fa-plus-circle fa-3x "></i>
+                        </div>
+                     </div>
+                  </div>
+                </div>
+          </div>
+          <div class="row">
+              <div class="p-4 col-lg-4" data-aos="flip-left">
+                <div class="info">
+                  <img class="w-100 imgh" src="images/work/work-4.jpg">
+                  <div class="row">
+                      <div class="p-4 col-lg-8">
+                          <h6><b>Pharmacy
+                            </b></h6>
+                          <p><a href="pharmacy.html">Get your medicine</a> and all your pharmacy needs.</p>
+                       </div>
+                       <div class=" col-sm-4 d-flex justify-content-center align-items-center">
+                          <i class="fas fa-plus-circle fa-3x "></i>
+                      </div>
+                   </div>
+                </div>
+              </div>
+              <div class="p-4 col-lg-4"data-aos="zoom-in-up">
+                 <div class="info">
+                   <img class="w-100 imgh" src="images/work/evalute.png">
+                   <div class="row">
+                      <div class="p-4 col-lg-8">
+                          <h6><b><a href="doctors'page.html" target="_blank">Evaluate the service by</a></b></h6>
+                          <p>offering suggestions or commenting on the provided service</p>
+                       </div>
+                       <div class="col-sm-4 d-flex justify-content-center align-items-center">
+                          <i class="fas fa-plus-circle fa-3x "></i>
+                      </div>
+                   </div>
+                 </div>
+               </div>
+               <div class="p-4 col-lg-4" data-aos="zoom-in-up">
+                   <div class="info">
+                     <img class="w-100 imgh" src="images/work/work-6.jpg">
+                     <div class="row">
+                        <div class="p-4 col-lg-11">
+                            <h6><b>Specializations</b></h6>
+                            <p>We allow you to learn a lot of information about types of cancer</p>
+                         </div>
+                         <div class="col-sm-1 d-flex justify-content-center align-items-center">
+                            <i class="fas fa-plus-circle fa-3x "></i>
+                        </div>
+                     </div>
+                   </div>
+                 </div>
+           </div>
+           <div class="row">
+            <div class="p-4 col-lg-4" data-aos="flip-left">
+              <div class="info">
+                <img class="w-100 imgh" src="images/work/images.jpg">
+                <div class="row">
+                    <div class="p-4 col-lg-8">
+                        <h6><b>Analysis
+                          </b></h6>
+                        <p>Only show by <a href="#" id="showIdmin">admins</a></p>
+                     </div>
+                     <div class=" col-sm-4 d-flex justify-content-center align-items-center">
+                        <i class="fas fa-plus-circle fa-3x "></i>
+                    </div>
+                 </div>
+              </div>
+            </div>
+            <div class="p-4 col-lg-4"data-aos="zoom-in-up">
+               <div class="info">
+                 <img class="w-100 imgh" src="images/work/evalute.png">
+                 <div class="row">
+                    <div class="p-4 col-lg-8">
+                        <h6><b>Join With Chat</b></h6>
+                        <p>Can Book With Doctor and join with him By a chat</p>
+                     </div>
+                     <div class="col-sm-4 d-flex justify-content-center align-items-center">
+                        <i class="fas fa-plus-circle fa-3x "></i>
+                    </div>
+                 </div>
+               </div>
+             </div>
+             <div class="p-4 col-lg-4" data-aos="zoom-in-up">
+                 <div class="info">
+                   <img class="w-100 imgh" src="img/con.jpg">
+                   <div class="row">
+                      <div class="p-4 col-lg-11">
+                          <h6><b><a href="Contactus.html">Contact Us</a></b></h6>
+                          <p>Any user can contact us in case of any problem
+                        </p>
+                       </div>
+                       <div class="col-sm-1 d-flex justify-content-center align-items-center">
+                          <i class="fas fa-plus-circle fa-3x "></i>
+                      </div>
+                   </div>
+                 </div>
+               </div>
+         </div>
+        </div>
+    </div>
+</section>
+
+<section class="quality px-4">
+    <div class="container">
+        <div class="row qualityP">
+            <div class="p-4 col-lg-3">
+                <i class="fa-solid fa-hand-holding-heart p-2 mb-2"></i><br>
+                <h4>All your healthcare needs</h4>
+                <p>Search and book a clinic visit, home visit, or a teleconsultation. Order your medicine and book a service or operation.</p>
+            </div>
+            <div class="p-4 col-lg-3">
+                <i class="fa-solid fa-user-plus p-2 mb-2"></i>
+                <h4>Verified patient reviews</h4>
+                <p>Verified patient reviews Doctor ratings are from patients who booked and visited the doctor.</p>
+            </div>
+            <div class="p-4 col-lg-3">
+                <i class="fa-solid fa-calendar-check p-2 mb-2"></i>
+                <h4>Your booking is confirmed</h4>
+                <p>Your booking is automatically confirmed, as the doctor specifies his working hours and is notified of the booking details.</p>
+            </div>
+            <div class="p-4 col-lg-3">
+                <i class="fa-solid fa-comment-medical p-2 mb-2"></i>
+                <h4>Book for free, and pay in the clinic</h4>
+                <p>The consultation fees stated on Vezeeta are the actual doctor's fees with no extra charges.</p>
+            </div>
+        </div>
+        <div class="p-4">
+            <div class="App">
+                <div class="row">
+                    <div class="col-lg-4"> 
+                        <img class="imgApp w-50" src="images/app.jpg">
+                    </div>
+                    <div class="col-lg-8 textApp">
+                        <h2>Download the Application</h2>
+                        <p>Compare, choose, and book. Track your appointments with ease, rate your doctor's visit, and order your medicine online.</p>
+                        <button type="button" class="btn btn-light google-play"><img src="img/google-play-logo.svg"> Google Play</button>
+                        <button type="button" class="btn btn-light google-play"><img src="img/apple-logo.svg"> App Store</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="endPage p-4">
+    <div class="container px-4">
+        <div class="row">
+            <div class="col-sm-2">
+                <h3>Medi Care</h3>
+                <a href="#">About Us</a><br>
+                <a href="#">Our Team</a><br>
+                <a href="Contactus.html">Contact Us</a>
+            </div>
+            <div class="col-sm-2">
+                <h3>Search By</h3>
+                <a href="#">Speciality</a>
+            </div>
+            <div class="col-sm-3">
+                <h3>Are You A Doctor ?</h3>
+                <a href="Doctor Register.html">Join Multi Care Doctors</a>
+            </div>
+            <div class="col-sm-3">
+                <h3>Need Help?</h3>
+                <a href="Contactus.html">Contact Us</a><br>
+                <a href="#">Terms Of Use</a><br>
+                <a href="#">Privacy Policy</a><br>
+                <a href="doctor.html">Doctors Privacy Policy</a>
+            </div>
+            <div class="col-sm-2">
+                <button type="button" class="btn btn-light google-play"><img src="img/google-play-logo.svg"> Google Play</button><br><br>
+                <button type="button" class="btn btn-light google-play"><img src="img/apple-logo.svg"> App Store</button><br><br>
+                <a class="nav-icon mx-2" href="www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+                <a class="nav-icon mx-2" href="www.instagram.com"><i class="fab fa-instagram"></i></a>
+                <a class="nav-icon mx-2" href="www.twitter.com"><i class="fab fa-twitter"></i></a>    
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script> AOS.init(); </script>
+<script src="js/main.js"></script>
+<script src="js/logout.js"></script> 
+</body>
+</html>

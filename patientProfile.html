@@ -1,0 +1,594 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- For Responsive mobile -->
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="shortcut icon" type="image/jpg" href="img/logo.png" />
+     <link rel="stylesheet" href="css/bootstrap.min.css" >
+     <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+     <link rel="stylesheet" href="css/all.min.css">
+     <link rel="stylesheet" href="css/profile.css"> 
+     <link rel="stylesheet" href="css/style.css"> 
+</head>
+<header>
+  <div class="container ">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light py-1 position-fixed fixed-top w-100">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                  <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-4">
+                      <li class="nav-item">
+                        <a class="nav-link active" href="index.html"><img src="images/logo/image.png"></a>
+                      </li>
+                  </ul> 
+                <ul class="navbar-nav ms-auto  mb-lg-0">
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Home 
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <li><a class="dropdown-item" href="cancer.html">About Cancer</a></li>
+                          <li><a class="dropdown-item" href="doctors'page.html" target="_blank">Our doctors</a></li>
+                          <li><a class="dropdown-item" href="doctors'page.html">Online consultation</a></li>
+                          <li><a class="dropdown-item" href="doctors'page.html" target="_blank">Book now</a></li>
+                        </ul>
+                      </li>
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#special_link" id="navbarDropdownMenuLink" id="special" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                             Specializations
+                          </a>
+                          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="cancerLung.html">Lung Cancer</a></li>
+                            <li><a class="dropdown-item" href="cancerLung.html">Bowel cancer</a></li>
+                            <li><a class="dropdown-item" href="cancerLung.html">Prostate and breast cancer</a></li>
+                            <li><a class="dropdown-item" href="#">Pancreas cancer</a></li>
+                            <li><a class="dropdown-item" href="#">Esophageal cancer</a></li>
+                            <li><a class="dropdown-item" href="#">Liver Cancer</a></li>
+                            <li><a class="dropdown-item" href="#">Bladder Cancer</a></li>
+                            <li><a class="dropdown-item" href="#">brain cancer</a></li>
+                            <li><a class="dropdown-item" href="#">bone cancer</a></li>
+                          </ul>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" href="#Services-link">Services</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Detection 
+                          </a>
+                          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="LungText.php" target="_blank">Lung Cancer</a></li>
+                            <li><a class="dropdown-item" href="Syndrome.php">Colon Cancer</a></li>
+                          </ul>
+                        </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" href="#">Success stories</a>
+                      </li>
+                      
+                      <li class="nav-item">
+                        <a class="nav-link active" href="contactUs.html">Contact us</a>
+                      </li>
+                </ul>
+                <button type="button" class="btn btn-info mx-3"><a  id="btnBookDetect" href="doctors'page.html" target="_blank">Book now</a></button>
+  
+                <div class="btn-group">
+                  <button type="button" class="btn btn-info dropdown-toggle btn-hi" data-bs-toggle="dropdown" aria-expanded="false" id="nameUser">
+                    <p id="signOut" class="d-inline"></p>
+                    <script>
+                      var name = localStorage.getItem('nameUser')
+                      var n = name.split(" "); 
+                      document.getElementById('signOut').innerHTML ="Hi, "+n[0];
+                    </script>
+            
+                </button>
+                <ul class="dropdown-menu">
+                   <li><a id="signout" class="dropdown-item" onclick="logout();"  >Sign out</a></li>
+                </ul>
+              </div>
+              </div>
+            </div>
+      </nav>
+  </div>
+  </header>
+ 
+    <body>
+       
+      <section class="">
+        <section class="row con patientprofile">
+            <section class="contentLeftpatient col-sm-2 pt-5 pe-0">
+                <p class="border-bottom p-2 mt-5" id="editp"><i class="fas fa-newspaper"></i> Your Account</p>
+                <p class="border-bottom p-2" id="comments"><i class="fas fa-users"></i> Password</p>
+                <p class="border-bottom p-2" id="dailyp"><i class="fas fa-users"></i>  Reservation</p>
+                <p class="border-bottom p-2" id="dailyimg"><i class="fas fa-users"></i> Profile Image</p>
+            </section>
+            <section id="profileContent" class="border-start contentRightpatient col-sm-10 d-flex">
+                
+                <form class="row g-3">
+                  <h2 class="mb-5">Edit Profile</h2>
+                    <div class="col-7 my-3">
+                        <label for="inputAddress" class="form-label">Full Name</label>
+                        <input type="text" class="form-control p-2" id="namep">
+                      </div>
+                    <div class="col-md-7 my-3">
+                      <label for="inputEmail4" class="form-label">E-mail</label>
+                      <input type="email" class="form-control p-2" id="emailp">
+                    </div>
+                    <div class="col-md-7 my-3">
+                      <label for="inputCity" class="form-label">Phone</label>
+                      <input type="number" class="form-control p-2" id="phonep">
+                    </div>
+                    <div class="col-7 my-3">
+                      <label for="inputAddress" class="form-label">Address</label>
+                      <input type="text" class="form-control p-2" id="inputAddress">
+                    </div>
+                    <div class="col-sm-6"></div>
+                     <button type="submit" class="btn btnstyle btnprofile col-sm-2 py-3 float-right" id="changeData">Save Changes</button>
+                  </form>
+            </section>
+            <section id="profileComment" class="comment contentRightpatient col-sm-10 border-start d-none">
+              <div class="comments d-block w-100">
+                <h2 class=" d-block">Security & Password</h2><br>
+                   <form class="row g-3">
+                  <h4 class="mb-5 text-muted">Change Password</h4>
+                    <div class="col-7 my-3 mb-5">
+                        <label class="form-label">Current Password</label>
+                        <input type="Password" class="form-control p-2" value="123456789" id="password">
+                    </div>
+                    <div class="col-7 my-3">
+                        <label class="form-label">New Password</label>
+                        <input type="Password" class="form-control p-2" id="pass" placeholder="new password">
+                        <span>It's a good idea to use a strong password that you're not using elsewhere.</span>
+                      </div>
+                    <div class="col-7 my-3">
+                        <label class="form-label">Re-type New Password</label>
+                        <input type="Password" class="form-control p-2" id="confirm_password" placeholder="Re-type">
+                      </div>
+                    <div class="col-sm-6"></div>
+                     <button type="submit" class="btn btnstyle btnprofile col-sm-2 py-3 float-right" id="passchange">Save Changes</button>
+                  </form>
+              </div>
+            </section>
+            <section id="profileDaily" class="dailyReservations contentRightpatient col-sm-10 border-start d-none">
+                <!-- <h2>Daily Reservations</h2> -->
+                <div class="w-100">
+                  <div class="">
+                    <button type="submit" class="btn btnstyle btnprofile col-sm-2 py-3 float-right mt-5 active" id="UpComing">UpComing</button>
+                    <button type="submit" class="btn btnstyle btnprofile col-sm-2 py-3 float-right mt-5 non-active" id="Complete">Complete</button>
+                  </div>
+                  <div class="col-sm-12 border-start d-flex" id="upcomingDaily">
+                  
+                    <div class="w-100 row Allreservationsupcom">
+                    </div>
+                  </div>
+                  <div class="col-sm-12 border-start d-none"  id="completeDaily">
+               
+                    <div class="w-100 row Allreservationscomp">
+                    </div>
+                  </div>              
+                </div>
+                
+            </section>
+            <section id="Alldailyimg" class="dailyimg contentRightpatient col-sm-10 border-start d-none">
+                <!-- <h2>Daily Reservations</h2> -->
+                <div id="Alldailyimg" class="w-100">
+                     <form class="row g-3">
+                      <h2 class="mb-5">New Profile Image</h2>
+                      <div class="imgs m-auto insertimg">
+                        <img src="" id="docimage"alt="doctor" class="patient rounded-circle">
+                        <input type="file" id="images">
+                        <label for="images">i</label>
+                      </div>
+                      <div class="col-sm-10"></div>
+                      <div class="col-sm-3"></div>
+                         <button type="submit" class="btn btnstyle btnprofile col-sm-2 py-3 float-right mt-5 ms-5" id="imgChange">Save Changes</button>
+                      </form>
+                </div>
+                
+            </section>
+        </section>
+    </section>
+    <section class="endPage p-4">
+      <div class="container px-4">
+          <div class="row">
+              <div class="col-sm-2">
+                  <h3>Medi Care</h3>
+                  <a href="#">About Us</a><br>
+                  <a href="#">Our Team</a><br>
+                  <a href="Contactus.html">Contact Us</a>
+              </div>
+              <div class="col-sm-2">
+                  <h3>Search By</h3>
+                  <a href="#">Speciality</a>
+              </div>
+              <div class="col-sm-3">
+                  <h3>Are You A Doctor ?</h3>
+                  <a href="Doctor Register.html">Join Multi Care Doctors</a>
+              </div>
+              <div class="col-sm-3">
+                  <h3>Need Help?</h3>
+                  <a href="Contactus.html">Contact Us</a><br>
+                  <a href="#">Terms Of Use</a><br>
+                  <a href="#">Privacy Policy</a><br>
+                  <a href="doctor.html">Doctors Privacy Policy</a>
+              </div>
+              <div class="col-sm-2">
+                  <button type="button" class="btn btn-light google-play"><img src="img/google-play-logo.svg"> Google Play</button><br><br>
+                  <button type="button" class="btn btn-light google-play"><img src="img/apple-logo.svg"> App Store</button><br><br>
+                  <a class="nav-icon mx-2" href="www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+                  <a class="nav-icon mx-2" href="www.instagram.com"><i class="fab fa-instagram"></i></a>
+                  <a class="nav-icon mx-2" href="www.twitter.com"><i class="fab fa-twitter"></i></a>    
+              </div>
+          </div>
+      </div>
+  </section>
+  
+        <!-- <script src="js/profile.js"></script> -->
+        <script type="module">
+         // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        updateEmail,
+        updatePassword 
+      } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+      import { getDatabase } from 'https://www.gstatic.com/firebasejs/9.6.8/firebase-database.js'
+      import {
+        getFirestore,
+        doc,
+        getDoc,
+        setDoc,
+        collection,
+        addDoc,
+        updateDoc ,serverTimestamp,query,where,getDocs
+      } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-firestore.js";
+      import {
+        getStorage, uploadBytesResumable, getDownloadURL
+      } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-storage.js";
+      import { onSnapshot ,orderBy} from "https://www.gstatic.com/firebasejs/9.6.8/firebase-firestore.js";
+      const firebaseConfig = {
+        apiKey: "AIzaSyBt4dnGARtW0fnugmHOopbNZyI9rfglz80",
+        authDomain: "graduation-project-a1c89.firebaseapp.com",
+        databaseURL:
+          "https://graduation-project-a1c89-default-rtdb.firebaseio.com",
+        projectId: "graduation-project-a1c89",
+        storageBucket: "graduation-project-a1c89.appspot.com",
+        messagingSenderId: "742395953187",
+        appId: "1:742395953187:web:48576f2e94aca323b9f196",
+        measurementId: "G-C6SSJZYJ0D",
+      };
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      const db = getFirestore(app);
+      const auth = getAuth(app);
+      const storage = getStorage(app);
+      const database = getDatabase(app);
+      
+      
+      var idPatient = localStorage.getItem("uIdPatient");
+
+      const q = query(collection(db, "patient"), where("uId","==", idPatient));
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => 
+      {
+        document.getElementById('namep').value = doc.data().fullName;
+        document.getElementById('emailp').value = doc.data().email;
+        document.getElementById('inputAddress').value = doc.data().address;  
+        document.getElementById('phonep').value = doc.data().phone;
+        document.getElementById('docimage').src = doc.data().image;
+      });       
+  document.getElementById("changeData").addEventListener('click',async function(){
+    alert("Data Updated successfully")
+    updateEmail(auth.currentUser,localStorage.getItem('email')).then(() => 
+      {
+        alert("Email updated!");
+      }).catch((error) => 
+      {
+        // alert(error);
+      });  
+    const docRef = doc(db, 'patient', idPatient );
+    const updateTimestamp = await updateDoc(docRef, {
+      "fullName":document.getElementById('namep').value,
+      "email":document.getElementById('emailp').value,
+      "address":document.getElementById('inputAddress').value ,
+      "phone":document.getElementById('phonep').value
+       
+    }).then(() =>
+    {
+      alert("Data updated successfully");
+    });
+})
+document.getElementById("imgChange").addEventListener('click',async function(){
+      
+    const docRef = doc(db, 'patient', idPatient );
+    const updateTimestamp = await updateDoc(docRef, {
+      "image": document.getElementById('docimage').src
+    }).then(() =>
+    {
+      alert("Image updated successfully");
+    });
+})
+
+  document.getElementById("editp").addEventListener("click",function(){
+  document.getElementById("editp").classList.add('activbar');
+  document.getElementById("comments").classList.remove('activbar');
+  document.getElementById("dailyp").classList.remove('activbar');
+  document.getElementById("dailyimg").classList.remove('activbar');
+  document.getElementById("profileContent").classList.replace('d-none' , 'd-flex');
+  document.getElementById("profileDaily").classList.replace('d-flex' , 'd-none');
+  document.getElementById("profileComment").classList.replace('d-flex' , 'd-none');
+  document.getElementById("Alldailyimg").classList.replace('d-flex' , 'd-none');
+})
+document.getElementById("comments").addEventListener("click",function(){
+  document.getElementById("editp").classList.remove('activbar');
+  document.getElementById("comments").classList.add('activbar');
+  document.getElementById("dailyp").classList.remove('activbar');
+  document.getElementById("dailyimg").classList.remove('activbar');
+  document.getElementById("profileContent").classList.replace('d-flex' , 'd-none');
+  document.getElementById("profileDaily").classList.replace('d-flex' , 'd-none');
+  document.getElementById("profileComment").classList.replace('d-none' , 'd-flex');
+  document.getElementById("Alldailyimg").classList.replace('d-flex' , 'd-none');
+})
+document.getElementById("dailyp").addEventListener("click",function(){
+  document.getElementById("editp").classList.remove('activbar');
+  document.getElementById("comments").classList.remove('activbar');
+  document.getElementById("dailyp").classList.add('activbar');
+  document.getElementById("dailyimg").classList.remove('activbar');
+  document.getElementById("profileContent").classList.replace('d-flex' , 'd-none');
+  document.getElementById("profileDaily").classList.replace('d-none' , 'd-flex');
+  document.getElementById("profileComment").classList.replace('d-flex' , 'd-none');
+  document.getElementById("Alldailyimg").classList.replace('d-flex' , 'd-none');
+});
+document.getElementById("dailyimg").addEventListener("click",function(){
+  document.getElementById("editp").classList.remove('activbar');
+  document.getElementById("comments").classList.remove('activbar');
+  document.getElementById("dailyp").classList.remove('activbar');
+  document.getElementById("dailyimg").classList.add('activbar');
+  document.getElementById("profileContent").classList.replace('d-flex' , 'd-none');
+  document.getElementById("profileDaily").classList.replace('d-flex' , 'd-none');
+  document.getElementById("profileComment").classList.replace('d-flex' , 'd-none');
+  document.getElementById("Alldailyimg").classList.replace('d-none' , 'd-flex');
+});
+
+
+
+/////////////////////////////////
+ document.getElementById("UpComing").addEventListener("click",function(){
+  document.getElementById("UpComing").classList.add('active');
+  document.getElementById("UpComing").classList.remove('non-active');
+  document.getElementById("Complete").classList.remove('active');
+  document.getElementById("Complete").classList.add('non-active');
+  document.getElementById("upcomingDaily").classList.replace('d-none' , 'd-flex');
+  document.getElementById("completeDaily").classList.replace('d-flex' , 'd-none');
+});
+ document.getElementById("Complete").addEventListener("click",function(){
+  document.getElementById("Complete").classList.add('active');
+  document.getElementById("Complete").classList.remove('non-active');
+  document.getElementById("UpComing").classList.remove('active');
+  document.getElementById("UpComing").classList.add('non-active');
+  document.getElementById("completeDaily").classList.replace('d-none' , 'd-flex');
+  document.getElementById("upcomingDaily").classList.replace('d-flex' , 'd-none');
+
+})
+/////////////////////////comments
+function reservationupcoming(image,name,phone,date){
+    var reservationn=document.querySelector(".Allreservationsupcom");
+
+    var div0=document.createElement("div");
+    var div1=document.createElement("div");
+    var div2=document.createElement("div");
+    var div3=document.createElement("div");
+    var div4=document.createElement("div");
+    var div5=document.createElement("div");
+    var div6=document.createElement("div");
+    var div7=document.createElement("div");
+    var div8=document.createElement("div");
+    var div9=document.createElement("div");
+    var div10=document.createElement("div");
+
+    var img=document.createElement("img");
+    var h5=document.createElement("h5");
+    var span0=document.createElement("apan");
+    var span1=document.createElement("apan");
+    var span2=document.createElement("apan");
+    var span3=document.createElement("apan");
+    var span4=document.createElement("apan");
+    var a0=document.createElement("a");
+    var a1=document.createElement("a");
+    var i0=document.createElement("i");
+    var i1=document.createElement("i");
+    var i2=document.createElement("i");
+    var i3=document.createElement("i");
+    var btn=document.createElement("button")
+
+    reservationn.appendChild(div0).classList.add("my-3","col-sm-9");
+    div0.appendChild(div1).classList.add("card" ,"border" ,"border-info", "rounded-3");
+    div0.appendChild(div1).classList.add("card" ,"border" ,"border-info", "rounded-3","pt-3");
+    div1.appendChild(div2).classList.add("row" ,"g-0" ,"p-3");
+    div1.appendChild(div3).classList.add("card-footer", "d-flex", "justify-content-around");
+    div2.appendChild(div4).classList.add("col-md-2" ,"p-3");
+    div2.appendChild(div5).classList.add("col-md-8");
+    div2.appendChild(div9).classList.add("col-md-2","h-100","d-flex","align-items-end");
+    div1.appendChild(btn).classList.add("btn" ,"btn-danger","col-md-2","position-absolute", "top-0", "end-0","canceled")
+    btn.innerHTML="canceled";
+    div4.appendChild(img).classList.add("img-fluid" ,"w-100","h-100","rounded-circle", "border" ,"border-info");
+    img.src=image;
+    div5.appendChild(div6).classList.add("card-body" ,"ps-0");
+    div6.appendChild(h5).classList.add("card-title" ,"name");
+    div6.appendChild(span0).classList.add("text-muted");
+    h5.innerHTML="Doctor "+name;
+    span0.setAttribute("id","spacialist");
+    span0.innerHTML=phone;
+    div3.appendChild(div7);
+    div3.appendChild(div8);
+    div7.appendChild(i0).classList.add("fa-solid", "fa-calendar-check" );
+    var arrdate = date.split(" ");
+    div7.appendChild(span1).innerHTML=" "+arrdate[0];
+    div8.appendChild(i1).classList.add("fa-solid", "fa-clock");
+    var arrh=arrdate[1].split(".");
+    div8.appendChild(span2).innerHTML=" "+arrh[0].slice(0,5);
+    div9.appendChild(div10).classList.add("row","card-body","ps-0","h-100");
+    div10.appendChild(span3).classList.add("col-md-6");
+    div10.appendChild(span4).classList.add("col-md-6");
+    span3.appendChild(a0).classList.add("color-i");
+    a0.href="chat.html"
+    a0.appendChild(i2).classList.add("fa-solid","fa-comments","border","border-info","fs-4","p-2");
+    span4.appendChild(a1).classList.add("color-i");
+    a1.appendChild(i3).classList.add("fa-solid","fa-video","ms-2","border","border-info","fs-4","p-2");
+
+}
+function reservationcomplete(image,name,phone,date){
+    var reservationn=document.querySelector(".Allreservationscomp");
+
+    var div0=document.createElement("div");
+    var div1=document.createElement("div");
+    var div2=document.createElement("div");
+    var div3=document.createElement("div");
+    var div4=document.createElement("div");
+    var div5=document.createElement("div");
+    var div6=document.createElement("div");
+    var div7=document.createElement("div");
+    var div8=document.createElement("div");
+    var div9=document.createElement("div");
+    var div10=document.createElement("div");
+
+    var img=document.createElement("img");
+    var h5=document.createElement("h5");
+    var span0=document.createElement("apan");
+    var span1=document.createElement("apan");
+    var span2=document.createElement("apan");
+    var span3=document.createElement("apan");
+    var span4=document.createElement("apan");
+    var a0=document.createElement("a");
+    var a1=document.createElement("a");
+    var i0=document.createElement("i");
+    var i1=document.createElement("i");
+    var i2=document.createElement("i");
+    var i3=document.createElement("i");
+
+    reservationn.appendChild(div0).classList.add("my-3","col-sm-9");
+    div0.appendChild(div1).classList.add("card" ,"border" ,"border-info", "rounded-3");
+    div1.appendChild(div2).classList.add("row" ,"g-0" ,"p-3");
+    div1.appendChild(div3).classList.add("card-footer", "d-flex", "justify-content-around");
+    div2.appendChild(div4).classList.add("col-md-2" ,"p-3");
+    div2.appendChild(div5).classList.add("col-md-8");
+    div2.appendChild(div9).classList.add("col-md-2","h-100","d-flex","align-items-end");
+    div4.appendChild(img).classList.add("img-fluid" ,"w-100","h-100","rounded-circle", "border" ,"border-info");
+    img.src=image;
+    div5.appendChild(div6).classList.add("card-body" ,"ps-0");
+    div6.appendChild(h5).classList.add("card-title" ,"name");
+    div6.appendChild(span0).classList.add("text-muted");
+    h5.innerHTML="Doctor "+name;
+    span0.setAttribute("id","spacialist");
+    span0.innerHTML=phone;
+    div3.appendChild(div7);
+    div3.appendChild(div8);
+    div7.appendChild(i0).classList.add("fa-solid", "fa-calendar-check" );
+    var arrdate = date.split(" ");
+    div7.appendChild(span1).innerHTML=" "+arrdate[0];
+    div8.appendChild(i1).classList.add("fa-solid", "fa-clock");
+    var arrh=arrdate[1].split(".");
+    div8.appendChild(span2).innerHTML=" "+arrh[0].slice(0,5);
+    div9.appendChild(div10).classList.add("row","card-body","ps-0","h-100");
+    div10.appendChild(span3).classList.add("col-md-6");
+    div10.appendChild(span4).classList.add("col-md-6");
+    span3.appendChild(a0).classList.add("color-i");
+    a0.href="chat.html"
+    a0.appendChild(i2).classList.add("fa-solid","fa-comments","border","border-info","fs-4","p-2");
+    span4.appendChild(a1).classList.add("color-i");
+    a1.appendChild(i3).classList.add("fa-solid","fa-video","ms-2","border","border-info","fs-4","p-2");
+
+}
+///////////////////////////reservation
+
+let arr=[],arrdata=[];
+let resrvCollectionRef = collection(db, `patient/${idPatient}/reservation`);  
+const GroupDocs = await getDocs(resrvCollectionRef);
+GroupDocs.forEach(async(item) =>{
+    arr.push(item.id);
+});
+var mapdates = new Map();
+for(var i=0;i<arr.length;i++){
+    let resrvCollectionRefdata = collection(db, `reservation`);  
+    const GroupDocsdata = await getDocs(resrvCollectionRefdata);
+    GroupDocsdata.forEach(async(item) =>{
+      if(item.id==arr[i]){
+         mapdates.set(item.id,[item.data().doctorId,item.data().patientId,item.data().date]);
+        arrdata.push(item.data().doctorId);
+      }
+    });
+}
+
+for(var j=0;j<mapdates.size;j++){
+  let resrvCollectionRefdataaa = collection(db, `doctor`);  
+    const GroupDocsdataaa = await getDocs(resrvCollectionRefdataaa);
+    GroupDocsdataaa.forEach(async(item) =>{
+      var values = Array.from(mapdates.values());
+      var dateformate=values[j][2];
+      var datetime=new Date(dateformate.slice(0,4), dateformate.slice(5,7), dateformate.slice(8,10),  dateformate.slice(11,13),  dateformate.slice(14,16));
+      var datenow=new Date();
+
+      if(item.id==arrdata[j]){
+        if( datetime.getTime() > datenow.getTime()){
+          reservationupcoming(item.data().image,item.data().fullName,item.data().phone,values[j][2]);
+        }else{
+          reservationcomplete(item.data().image,item.data().fullName,item.data().phone,values[j][2]);
+        }
+      }
+    });
+}
+document.getElementById("passchange").addEventListener('click',function(){
+  var password = document.getElementById("pass").value;
+  var confirm_password = document.getElementById("confirm_password").value;
+
+    if (password == confirm_password) {
+       alert("Password Updated Successfully");
+    } else {
+        alert("Not Match")
+
+    }
+
+})
+//////////////////////////////////
+
+
+document.getElementById("editp").addEventListener('click',function(){
+  document.getElementById("profileContent").classList.replace('d-none' , 'd-flex');
+  document.getElementById("profileComment").classList.replace('d-flex' , 'd-none');
+  document.getElementById("profileDaily").classList.replace('d-flex' , 'd-none');
+  document.getElementById("Alldailyimg").classList.replace('d-flex' , 'd-none');
+})
+document.getElementById("comments").addEventListener('click',function(){
+  document.getElementById("profileContent").classList.replace('d-flex' , 'd-none');
+  document.getElementById("profileComment").classList.replace('d-none' , 'd-flex');
+  document.getElementById("profileDaily").classList.replace('d-flex' , 'd-none');
+  document.getElementById("Alldailyimg").classList.replace('d-flex' , 'd-none');
+})
+document.getElementById("dailyp").addEventListener('click',function(){
+  document.getElementById("profileContent").classList.replace('d-flex' , 'd-none');
+  document.getElementById("profileComment").classList.replace('d-flex' , 'd-none');
+  document.getElementById("profileDaily").classList.replace('d-none' , 'd-flex');
+  document.getElementById("Alldailyimg").classList.replace('d-flex' , 'd-none');
+})
+document.getElementById("dailyimg").addEventListener('click',function(){
+  document.getElementById("profileContent").classList.replace('d-flex' , 'd-none');
+  document.getElementById("profileComment").classList.replace('d-flex' , 'd-none');
+  document.getElementById("profileDaily").classList.replace('d-flex' , 'd-none');
+  document.getElementById("Alldailyimg").classList.replace('d-none' , 'd-flex');
+})
+//////////////////////////////
+
+
+</script> 
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>    
+    </body>
+</html>

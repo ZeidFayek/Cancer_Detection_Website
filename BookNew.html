@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/jpg" href="img/logo.png">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css"
+    />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+    <link rel="stylesheet" href="css/signUp.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="stylesheet" type="text/css" href="css/doctors'page.css">
+  </head>
+  <style>
+    body{
+        background-color: #E2E6EA;
+    }
+    #blu{
+        color: rgb(32, 36, 39);
+        text-align: center;
+        height: 50px;
+        width: 100%;
+    }
+    .Booking{
+        border-radius: 15px;
+        background-color: #ffffff;
+    }
+    .form{
+        width: 100%;
+        height: 34px;
+        background-color: rgb(255, 255, 255);
+        color: rgb(128, 129, 132);
+        font-size: 13px;
+        box-shadow: none;
+        border-top-width: initial;
+        border-right-width: initial; 
+        border-left-width: initial;
+        border-style: none none solid;
+        border-image: initial;
+        text-align: start;
+        border-bottom-width: 2px;
+        padding-left: 30px;
+        border-color: inherit;
+    }
+  .form:focus{
+     outline: none;
+     background-color: inherit;
+  }
+  .carousel-control-next {
+    left: 454px;
+    top: 38%;
+}
+  .card-header{
+    font-size: 13px
+  }
+  .extra-small{
+    font-size:11px 
+  }
+  .card-footer{
+    font-size: 14px
+  }
+  .btn-primary,.btn-check:focus+.btn-primary, .btn-primary:focus,.btn-check:active+.btn-primary, .btn-check:checked+.btn-primary, .btn-primary.active, .btn-primary:active, .show>.btn-primary.dropdown-toggle,.btn-primary:hover{
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+  }
+  h6{
+    font-weight: bolder;
+  }
+  .p-style{
+    font-size: 14px
+  }
+  .rate{
+    background-color: var(--main-color);
+    color:#fff;
+  }
+  section i{
+    color: var(--main-color);
+    font-size: 40px;
+  }
+  .bghover:hover{
+    background-color: rgb(32,178,175,.5);
+  }
+  
+</style>
+
+<script type="text/javascript">
+  
+</script>
+  <body>
+    <main class="py-5">
+      <div class="container">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Best Doctors In Egypt</h3>
+            <h6 class="card-subtitle mt-4 mb-2">Book online <i class="fa-solid fa-calendar-days"></i></h6>
+            <p class="card-text"><span id="n-doctor"> </span> Doctors - More than <span id="n-specialist"></span> Specialties.</p>
+          </div>
+        </div>
+        <div>
+          <div class="d-flex bd-highlight">
+            <div class="p-2 flex-fill bd-highlight bg-light rounded-start btn-group px-0 py-0 border border-secondary">
+                <!-- <button class="btn btn-lg dropdown-toggle py-2 btns" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa-solid fa-stethoscope"></i> choose specialty -->
+                  <select id="specialtySelect" class="form-select" name="specialty" required>
+								 
+                    <option selected>choose specialty...</option>
+                    <option>Lung Cancer</option>
+                    <option>colon cancer</option>
+                    <option>Pancreas Cancer</option>
+                    <option>brain cancer</option>
+                    <option>Prostate and breast cancer</option>
+                    <option>Esophageal cancer</option>
+                    <option>Liver Cancer</option>
+                    <option>bone cancer</option>
+                    </select>
+                  
+               <!-- </button> -->
+              
+            </div>
+            <div class="p-2 flex-fill bd-highlight bg-light rounded-0 btn-group px-0 py-0 border border-secondary">
+              <select id="citySelect" class="form-select" name="city" required>
+								 
+								<option selected>choose city...</option>
+								<option>Cairo</option>
+								<option>Alexandria</option>
+								<option>Ismailia</option>
+								<option>Aswan</option>
+								<option>Assiut</option>
+								<option>Luxor</option>
+								<option>Beheira</option>
+								<option>Beni Suef</option>
+								<option>Port Said</option>
+								<option>South Sinai</option>
+								<option>Giza</option>
+							  </select>
+						    
+              <ul class="dropdown-menu" id="city">
+              </ul>
+            </div>
+            <div class="p-2 flex-fill bd-highlight bg-light rounded-0 btn-group px-0 py-0 border border-secondary">
+                <input type="text" id="fname" name="fname" placeholder="Enter Doctor's Name" class="w-100 px-2">
+            </div>
+            <div class="p-2 flex-fill bd-highligh bg rounded-end btn-group px-0 py-0 border border-secondary">
+                <button class="btn btn-lg py-2 bg" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-magnifying-glass"></i> search
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+           
+    <section class="sec1 p-5">
+      <div class="container-fluid px-5">
+        <div class="row ">
+          <aside class="col-md-7 h-100 dr" id="doccccc">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Cancereta</a></li>
+                <li class="breadcrumb-item active name" aria-current="page"></li>
+              </ol>
+            </nav>
+            <div class="side">
+              <div class="card mb-3 w-100  border border-secondary rounded-3 p-3">
+                <div class="row g-0">
+                  <div class="col-md-3 p-3">
+                    <img id="img" class="img-fluid w-100 h-100 rounded-circle border border-secondary"  alt="...">
+                
+                  </div>
+                  <div class="col-md-9">
+                    <div class="card-body ps-0">
+                      <h5 class="card-title text-muted name"></h5>
+                      <span class="text-muted" id="spacialist"></span>
+                      <p class="card-text my-2" id="address"></p> <div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-3 w-100  border border-secondary rounded-3 p-3">
+                <div class="row g-0">
+                  <div class="col-md-1 p-3">
+                    <i class="fa-solid fa-info"></i>
+                  </div>
+                  <div class="col-md-11">
+                    <div class="card-body ps-0">
+                      <h6 class="card-title">About the doctor</h6>
+                      <p class="card-text my-2 p-style about"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="comments">
+                
+              </div>
+             
+              <div class="card-footer border">
+                <div id="rateYoo" data-rateyo-rating></div>
+                <div class="input-group d-flex align-items-end">
+                  <input type="text" class="form-control" id="validationDefault01" placeholder="Enter your comment" required>
+                  <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Add Comment</button>
+                </div>
+              </div>
+              
+            </div>
+          </aside>
+          <div class="left col-md-5">
+            <div class=" Booking pb-3 border border-secondary">
+              <div id="blu" class="mb-5 ">
+                  <p class=" header py-2">Booking Information</p>
+              </div>
+              <div class="p-4">
+                <h5 class="text-center">Fill in contact details for telehealth</h5>
+                
+                <div class="mt-4" id="cardapp">
+                
+                </div>
+                <h5>Payment Method</h5>
+                <div class="form-check  ">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">Fawry</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                  <label class="form-check-label" for="flexRadioDefault2">Credit Card</label>
+                </div>
+                <br><br>
+                <button type="button"  class="btn btn-primary" id="sendReservation">Book</button>
+              </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class=" col-sm-7">
+          
+        </div>
+        
+      </div>
+      
+    </section>
+           
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
+      import {
+        getStorage,
+        ref,
+        uploadBytesResumable,
+        getDownloadURL,
+      } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-storage.js";
+      import {
+        getFirestore,
+        getDoc,
+        doc, setDoc,
+        collection,
+        addDoc,
+        updateDoc,
+        serverTimestamp,getDocs,query,Timestamp ,onSnapshot,orderBy 
+      } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-firestore.js";
+      const firebaseConfig = {
+        apiKey: "AIzaSyBt4dnGARtW0fnugmHOopbNZyI9rfglz80",
+        authDomain: "graduation-project-a1c89.firebaseapp.com",
+        databaseURL:
+          "https://graduation-project-a1c89-default-rtdb.firebaseio.com",
+        projectId: "graduation-project-a1c89",
+        storageBucket: "graduation-project-a1c89.appspot.com",
+        messagingSenderId: "742395953187",
+        appId: "1:742395953187:web:48576f2e94aca323b9f196",
+        measurementId: "G-C6SSJZYJ0D",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      const db = getFirestore(app);
+      const auth = getAuth(app);
+     
+      
+      var count=0;
+      var Rating=0;                    //rate,comment,name,birthday,time
+      function data_of_comments(rate,content,date){
+        var perant=document.querySelector(".comments");
+        var div0=document.createElement("div");
+        var div1=document.createElement("div");
+        var div2=document.createElement("div");
+        var div3=document.createElement("div");
+        var div4=document.createElement("div");
+        var div5=document.createElement("div");
+        var div6=document.createElement("div");
+        var div7=document.createElement("div");
+        var div8=document.createElement("div");
+        var div9=document.createElement("div");
+
+        var span0=document.createElement("span");
+        var span1=document.createElement("span");
+        var span2=document.createElement("span");
+        var span3=document.createElement("span");
+        // var span4=document.createElement("span");
+
+        var p0=document.createElement("p");
+        var p1=document.createElement("p");
+
+        perant.appendChild(div0).classList.add("card","mb-3","w-100","pe-0","rounded-0","comm");
+        div0.appendChild(div1).classList.add("row","g-0");
+        div1.appendChild(div2).classList.add("col-md-12");
+        div2.appendChild(div3).classList.add("card-body","p-0");
+        div3.appendChild(div4).classList.add("row");
+        div3.appendChild(div9).classList.add("card-footer");
+        div4.appendChild(div5).classList.add("p-4","col-sm-8");
+        div4.appendChild(div6).classList.add("col-sm-4","d-flex","justify-content-center","align-items-center");
+
+        div5.appendChild(div7);
+        div5.appendChild(span0).classList.add("text-muted");
+        div5.appendChild(p0).classList.add("card-text","my-3","p-style");
+        div7.setAttribute("id","rateYo"+count);
+        div7.setAttribute("data-rateyo-read-only","true");
+        ///////////NLP///////////////////
+        span0.innerHTML="Over All Raiting";
+        p0.innerHTML=content;
+
+        div6.appendChild(div8).classList.add("text-center");
+        div8.appendChild(p1);
+        div8.appendChild(span1).classList.add("text-muted","mt-5");
+        p1.appendChild(span2).classList.add("rate","p-2","border","rounded-3");
+        span1.innerHTML="Doctor Raiting";
+        span2.innerHTML=rate;
+
+        // div9.appendChild(span4).classList.add("card-text","my-2","p-style");
+        div9.appendChild(span3).classList.add("card-text","my-2","p-style","text-muted");
+        // span4.innerHTML="Lamiaa Mohamed, 21Years Old";
+        span3.innerHTML=date;
+         
+$(function () { 
+    var $rateYo = $("#rateYoo").rateYo();
+    $("#button-addon2").click(function () 
+    {
+   /* get rating */
+    var rating = $rateYo.rateYo("rating");
+    Rating = rating*1.5;
+     
+    // if(Rating<1.5){
+    //   Rating = 1;
+    // }else if(Rating>1.5){
+    //   Rating = 2;
+    // }
+    // else if(Rating<2.5){
+    //   Rating = 2;
+    // }
+    // else if(Rating>2.5){
+    //   Rating = 3;
+    // }
+    // else if(Rating<3.5){
+    //   Rating = 3;
+    // }
+    // else if(Rating>3.5){
+    //   Rating = 4;
+    // }else if(Rating<4.5){
+    //   Rating = 4;
+    // }else 
+    // if(Rating>4.5){
+    //   Rating = 5;
+    //  }
+     
+    
+    //window.alert("Its zeyad " +rating*1.5 + " Yo!");
+    });
+
+});
+       ////////////////////////////////////////////
+       var rat="#rateYo"+count;
+       $(function () {
+         $(rat).rateYo({
+           rating: rate,
+           readOnly: true,
+           starWidth: "25px",
+         });
+         
+       });
+        // // Getter
+        var normalFill = $(rat).rateYo("option", "rating");
+         
+        // // Setter
+        $(rat).rateYo("option", "readOnly", false); //returns a jQuery Element
+
+        count++;
+      }
+
+
+      // //Show name doctor//////////////////
+      var doctorId=localStorage.getItem("doctorDocRefId");
+
+      const docRef = doc(db, 'doctor', doctorId);
+          const docSnap = await getDoc(docRef) ;
+          //const  data = docSnap.data();
+          const img=document.getElementById("img").src=docSnap.data().image;
+          const element = document.querySelectorAll(".name");
+          const specialization=document.getElementById("spacialist").innerHTML=docSnap.data().specialization;
+          const adress=document.getElementById("address").innerHTML=docSnap.data().specialization+" "+ "Specialized"+" "+"from"+" "+docSnap.data().address;
+          for(var i=0;i<element.length;i++){
+            element[i].innerHTML="Doctor"+" "+ docSnap.data().fullName;
+          }
+            /////////////////////////access about doctor/////////////
+    const about=document.querySelector(".about").innerHTML="Dr."+" "+docSnap.data().fullName+" "+"Specializes"+" "+"in"+" "+docSnap.data().specialization+" "+"from"+" "+docSnap.data().university+" "+"University"+" "+"and"+" "+"i"+" "+"have"+" "+"alot"+" "+"of"+" "+"certifications"+" "+"such"+" "+docSnap.data().certificates;
+    /////////////////access comment from firebase///////
+
+    let userCollectionRef =query(collection(db, `doctor/${docSnap.id}/comments`),orderBy("createdAt"));
+    onSnapshot(userCollectionRef, { includeMetadataChanges: true }, (snapshot) => 
+    {
+      snapshot.docChanges().forEach((change) => 
+      {
+          if (change.type === "added") 
+          {
+            data_of_comments(change.doc.data().rate,change.doc.data().comment,change.doc.data().createdAt);
+          }
+          const source = snapshot.metadata.fromCache ? "local cache" : "server";
+      });
+    });
+
+////////////////////////////store comment && Reservation////////////////////////////
+const currentTime = new Date();
+          var year = currentTime.getFullYear();
+          var month = currentTime.getMonth();
+          var day = currentTime.getDate();
+          var dash = "-";
+          var space = "T";
+          var colon = ":";
+          var dot = "."
+          var hour = currentTime.getHours();
+          var minutes = currentTime.getMinutes();
+          var seconds = currentTime.getSeconds();
+          var millsecond = currentTime.getMilliseconds();
+          var timestamp = year + dash + month + dash+ day+ space+ hour+ colon+ minutes+ colon+ seconds+dot+millsecond;
+         
+      var btnIn = document.getElementById("button-addon2");
+      var btnIn2 = document.getElementById("sendReservation");
+        btnIn.addEventListener("click", async function () {
+        
+        const ref = collection(db, "doctor");
+        var commentInput = document.getElementById("validationDefault01").value;
+        const doctorDocRefId = localStorage.getItem("doctorDocRefId");
+        const senderId = localStorage.getItem("uIdPatient");
+        const doctorsDocs = await getDocs(ref);
+        const doctorDocRef = await doctorsDocs.docs.find(
+        (doc) => doc.id === doctorDocRefId
+        ).ref;
+        
+        const addressesCol = collection(doctorDocRef, "comments");
+        const addressDocRef = addDoc(addressesCol, {
+          createdAt:timestamp,
+          comment:commentInput,
+          rate:3,
+          senderId:senderId
+       }).then(() => 
+        {
+          alert("comment added successfully");
+        });
+        // var normalFill=3;
+       var commentInput = document.getElementById("validationDefault01").value="";
+         
+     });
+
+   
+/////////////////////////////////////
+ 
+////////////////////////////////////
+     var startTime = 0 , endTime = 0;
+     var sT=0,eT=0;
+  async function showDate()
+  {
+    const docRef =doc(db, "doctor",doctorId);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) 
+    {
+     sT=docSnap.data().startTime.split(" ");
+     eT=docSnap.data().endTime.split(" ");
+     var s=sT[1].split(":",2);
+     var e=eT[1].split(":",2);
+      
+     localStorage.setItem("startTime",s);
+     localStorage.setItem("endTime",e); 
+     //alert(localStorage.getItem("startTime"));
+    } 
+    else 
+    {
+      console.log("No such document!");
+    }
+  }
+
+  window.onload = showDate();
+
+  startTime = localStorage.getItem("startTime");
+  endTime=localStorage.getItem("endTime");
+  console.log("startTime",startTime);
+  console.log("endTime",endTime);
+
+  var availableTime = [];
+  var hourS=0;
+  const myArray = startTime.split(",");
+  if(myArray[0]>=12){
+  hourS=(parseInt(myArray[0])-12)*60;
+  }
+  else{
+     hourS = parseInt(myArray[0])*60;
+  }
+  var MinS = parseInt( myArray[1]);
+  var stS=hourS+MinS;
+  var hourE=0;
+  const arrayEndTime = endTime.split(",");
+  if(arrayEndTime[0]>=12){
+    hourE=(parseInt(arrayEndTime[0])-12)*60;
+  }
+  else{
+    hourE=parseInt(arrayEndTime[0])*60
+  }
+  
+  var MinE = parseInt(arrayEndTime[1]);
+  var stE = hourE+MinE;
+  
+var availableTime=[];
+while(stS<stE){
+  availableTime.push(stS);
+  stS+=30;
+}
+for(var i=0;i<availableTime.length;i++)
+{
+  console.log(" i ",i,availableTime[i]);
+}
+var arr=[0 , 0];
+var availableHour=[];
+var q=0;
+arr=[0 , 0];
+for(var i=0;i<availableTime.length;i++)
+{
+  var x = availableTime[i]/60; 
+  arr[0] = parseInt(x); 
+  arr[1] =parseInt((x-arr[0])*60);
+  var item=arr.join(':');
+  availableHour.push(item);
+}
+
+
+window.onload=booking(availableHour);
+  function booking(availableHour){
+console.log("lollllll",availableHour);
+  var arr=["Saturday","Sunday","Monday","Teusday","Wenesday","Tharsday","Friday"] ,day=0;
+  var book=document.getElementById("cardapp");
+  var div0=document.createElement("div");
+  var div1=document.createElement("div");
+  var div2=document.createElement("div");
+  var div3=document.createElement("div");
+  var div4=document.createElement("div");
+  var div5=document.createElement("div");
+  var div6=document.createElement("div");
+  var div7=document.createElement("div");
+  var div8=document.createElement("div");
+  var div9=document.createElement("div");
+  var div10=document.createElement("div");
+  var div11=document.createElement("div");
+  var div12=document.createElement("div");
+  var div13=document.createElement("div");
+  var div14=document.createElement("div");
+  var div15=document.createElement("div");
+  var div16=document.createElement("div");
+  var div17=document.createElement("div");
+  var div18=document.createElement("div");
+  var div19=document.createElement("div");
+  var div20=document.createElement("div");
+  var div21=document.createElement("div");
+  var div22=document.createElement("div");
+  var div23=document.createElement("div");
+  var div24=document.createElement("div");
+  var div25=document.createElement("div");
+  var div26=document.createElement("div");
+  var div27=document.createElement("div");
+  var div28=document.createElement("div");
+  var div29=document.createElement("div");
+  var div30=document.createElement("div");
+  var div31=document.createElement("div");
+  var div32=document.createElement("div");
+  var div33=document.createElement("div");
+  var div34=document.createElement("div");
+  var div35=document.createElement("div");
+  var div36=document.createElement("div");
+  var div37=document.createElement("div");
+  var div38=document.createElement("div");
+  var div39=document.createElement("div");
+  var div40=document.createElement("div");
+  var div41=document.createElement("div");
+  var div42=document.createElement("div");
+  var div43=document.createElement("div");
+  var div44=document.createElement("div");
+  var div45=document.createElement("div");
+  var div46=document.createElement("div");
+  var div47=document.createElement("div");
+  var div48=document.createElement("div");
+  var div49=document.createElement("div");
+  var div50=document.createElement("div");
+  var div51=document.createElement("div");
+  var div52=document.createElement("div");
+  var div53=document.createElement("div");
+  var div54=document.createElement("div");
+  var div55=document.createElement("div");
+  var div56=document.createElement("div");
+  var div57=document.createElement("div");
+  var div58=document.createElement("div");
+  var div59=document.createElement("div");
+  var div60=document.createElement("div");
+  var div61=document.createElement("div");
+  var div62=document.createElement("div");
+  var div63=document.createElement("div");
+  var div64=document.createElement("div");
+  var div65=document.createElement("div");
+  var div66=document.createElement("div");
+  var div67=document.createElement("div");
+  
+
+  var p0=document.createElement("p");
+  var p1=document.createElement("p");
+  var p2=document.createElement("p");
+  var p3=document.createElement("p");
+  var p4=document.createElement("p");
+  var p5=document.createElement("p");
+  var p6=document.createElement("p");
+  var span0=document.createElement("span");
+  var span1=document.createElement("span");
+  var span2=document.createElement("span");
+  var span3=document.createElement("span");
+  var span4=document.createElement("span");
+  var span5=document.createElement("span");
+  var span6=document.createElement("span");
+  var span7=document.createElement("span");
+  var span8=document.createElement("span");
+  var span9=document.createElement("span");
+  var span10=document.createElement("span");
+  var span11=document.createElement("span");
+  var span12=document.createElement("span");
+  var span13=document.createElement("span");
+  var span14=document.createElement("span");
+  var span15=document.createElement("span");
+  var span16=document.createElement("span");
+  var span17=document.createElement("span");
+  var span18=document.createElement("span");
+
+  var a0=document.createElement("a");
+  var a1=document.createElement("a");
+  var a2=document.createElement("a");
+
+
+  var button0=document.createElement("button");
+  var button1=document.createElement("button");
+
+  book.appendChild(div0).classList.add("carousel","slide" ,"mt-3");
+  div0.setAttribute("data-bs-interval","false");
+  div0.setAttribute("id","carouselExampleControls");
+  div0.setAttribute("data-bs-ride","carousel");
+  div0.appendChild(div1).classList.add("carousel-inner");
+  div1.appendChild(div2).classList.add("carousel-item","active");
+  div1.appendChild(div24).classList.add("carousel-item");
+  div1.appendChild(div25).classList.add("carousel-item");
+
+
+  ///////////////////////////////////////////////////////////////////////div1
+  div2.appendChild(div3).classList.add("slider");
+  div3.appendChild(div4).classList.add("w-100", "row", "px-5");
+
+  div4.appendChild(div5).classList.add("col-md-4" ,"px-1");
+  div5.appendChild(div6).classList.add("card", "border-success", "mb-3");
+  div6.appendChild(div7).classList.add("card-header","border-success","fw-bold","text-center");
+  div6.appendChild(div8).classList.add("card-body","text-success","px-2","py-4");
+  div6.appendChild(div9).classList.add("card-footer","border-success","fw-bold","text-center","pointer");
+  div7.innerHTML=arr[0];
+  div8.appendChild(p0).classList.add("card-text","extra-small");
+  var timeInc=68;
+  for(var i=0;i<availableHour.length;i++){
+    var s="div"+timeInc;
+    var s=document.createElement("div");
+    p0.appendChild(s).classList.add("fw-bold","text-center","pointer","bghover");
+    s.setAttribute('id','qq');
+    s.setAttribute("value",arr[0]);
+    s.setAttribute("onclick", "onclick()");
+
+    s.innerHTML=availableHour[i]+" "+"PM";
+    timeInc++;
+  }
+  div9.innerHTML="Book";
+  day++;
+
+  
+  div4.appendChild(div10).classList.add("col-md-4" ,"px-1");
+  div10.appendChild(div11).classList.add("card", "border-success", "mb-3");
+  div11.appendChild(div12).classList.add("card-header","border-success","text-center","fw-bold");
+  div11.appendChild(div13).classList.add("card-body","text-success","px-2","py-4");
+  div11.appendChild(div14).classList.add("card-footer","border-success","fw-bold","text-center","pointer");
+  div12.innerHTML=arr[1];
+  div13.appendChild(p1).classList.add("card-text","extra-small");
+  for(var i=0;i<availableHour.length;i++){
+    var s="div"+timeInc;
+    var s=document.createElement("div");
+    p1.appendChild(s).classList.add("fw-bold","text-center","pointer","bghover");
+    s.setAttribute('id','qq');
+    s.setAttribute("value",arr[1]);
+    s.setAttribute("onclick", "onclick()");
+    s.innerHTML=availableHour[i]+"PM";
+    timeInc++;
+  }
+
+  div14.innerHTML="Book";
+  day++;
+
+  div4.appendChild(div15).classList.add("col-md-4" ,"px-1");
+  div15.appendChild(div16).classList.add("card", "border-success", "mb-3");
+  div16.appendChild(div17).classList.add("card-header","border-success","text-center","fw-bold");
+  div16.appendChild(div18).classList.add("card-body","text-success","px-2","py-4");
+  div16.appendChild(div20).classList.add("card-footer","border-success","fw-bold","text-center","pointer");
+  div17.innerHTML=arr[2];
+  div18.appendChild(p2).classList.add("card-text","extra-small");
+  for(var i=0;i<availableHour.length;i++){
+    var s="div"+timeInc;
+    var s=document.createElement("div");
+    p2.appendChild(s).classList.add("fw-bold","text-center","pointer","bghover");
+    s.setAttribute("value",arr[2]);
+    s.setAttribute("onclick", "onclick()");
+    s.setAttribute('id','qq');
+    s.innerHTML=availableHour[i]+"PM";
+    timeInc++;
+  }
+  div20.innerHTML="Book";
+  day++;
+
+/////////////////////////////////////////div2
+  div24.appendChild(div26).classList.add("slider");
+  div26.appendChild(div27).classList.add("w-100", "row", "px-5");
+
+  div27.appendChild(div28).classList.add("col-md-4" ,"px-1");
+  div28.appendChild(div29).classList.add("card", "border-success", "mb-3");
+  div29.appendChild(div30).classList.add("card-header","border-success","fw-bold","text-center");
+  div29.appendChild(div31).classList.add("card-body","text-success","px-2","py-4");
+  div29.appendChild(div32).classList.add("card-footer","border-success","fw-bold","text-center","pointer");
+  div30.innerHTML=arr[3];
+  div31.appendChild(p3).classList.add("card-text","extra-small");
+  for(var i=0;i<availableHour.length;i++){
+    var s="div"+timeInc;
+    var s=document.createElement("div");
+    p3.appendChild(s).classList.add("fw-bold","text-center","pointer","bghover");
+    s.setAttribute("value",arr[3]);
+    s.setAttribute("onclick", "onclick()");
+    s.setAttribute('id','qq');
+    s.innerHTML=availableHour[i]+"PM";
+    timeInc++;
+  }
+  div32.innerHTML="Book";
+  day++;
+
+  div27.appendChild(div33).classList.add("col-md-4" ,"px-1");
+  div33.appendChild(div34).classList.add("card", "border-success", "mb-3");
+  div34.appendChild(div35).classList.add("card-header","border-success","text-center","fw-bold");
+  div34.appendChild(div36).classList.add("card-body","text-success","px-2","py-4");
+  div34.appendChild(div37).classList.add("card-footer","border-success","fw-bold","text-center","pointer");
+  div35.innerHTML=arr[4];
+  div36.appendChild(p4).classList.add("card-text","extra-small");
+  for(var i=0;i<availableHour.length;i++){
+    var s="div"+timeInc;
+    var s=document.createElement("div");
+    p4.appendChild(s).classList.add("fw-bold","text-center","pointer","bghover");
+    s.setAttribute("value",arr[4]);
+    s.setAttribute("onclick", "onclick()");
+    s.setAttribute('id','qq');
+    s.innerHTML=availableHour[i]+"PM";
+    timeInc++;
+  }
+  div37.innerHTML="Book";
+  day++;
+
+  div27.appendChild(div38).classList.add("col-md-4" ,"px-1");
+  div38.appendChild(div39).classList.add("card", "border-success", "mb-3");
+  div39.appendChild(div40).classList.add("card-header","border-success","text-center","fw-bold");
+  div39.appendChild(div41).classList.add("card-body","text-success","px-2","py-4");
+  div39.appendChild(div42).classList.add("card-footer","border-success","fw-bold","text-center","pointer");
+  div40.innerHTML=arr[5];
+  div41.appendChild(p5).classList.add("card-text","extra-small");
+  for(var i=0;i<availableHour.length;i++){
+    var s="div"+timeInc;
+    var s=document.createElement("div");
+    p5.appendChild(s).classList.add("fw-bold","text-center","pointer","bghover");
+    s.setAttribute("value",arr[5]);
+    s.setAttribute("onclick", "onclick()");
+    s.setAttribute('id','qq');
+    s.innerHTML=availableHour[i]+"PM";
+    timeInc++;
+  }
+  div42.innerHTML="Book";
+  day++;
+
+
+  div25.appendChild(div46).classList.add("slider");
+  div46.appendChild(div47).classList.add("w-100", "row", "px-5");
+
+  div47.appendChild(div48).classList.add("col-md-4" ,"px-1");
+  div48.appendChild(div49).classList.add("card", "border-success", "mb-3");
+  div49.appendChild(div50).classList.add("card-header","border-success","fw-bold","text-center");
+  div49.appendChild(div51).classList.add("card-body","text-success","px-2","py-4");
+  div49.appendChild(div52).classList.add("card-footer","border-success","fw-bold","text-center","pointer");
+  div50.innerHTML=arr[6];
+  div51.appendChild(p6).classList.add("card-text","extra-small");
+  for(var i=0;i<availableHour.length;i++){
+    var s="div"+timeInc;
+    var s=document.createElement("div");
+    p6.appendChild(s).classList.add("fw-bold","text-center","pointer","bghover");
+    s.setAttribute("value",arr[6]);
+    s.setAttribute('id','qq');
+    s.setAttribute("onclick", "onclick()");
+    s.innerHTML=availableHour[i]+"PM";
+    timeInc++;
+  }
+  div52.innerHTML="Book";
+  day++;
+
+  ///////////////////////////////////////////////////////////////////////
+
+  div1.appendChild(button0).classList.add("carousel-control-prev");
+  div1.appendChild(button1).classList.add("carousel-control-next");
+  button0.setAttribute("type","button");
+  button0.setAttribute("data-bs-target","#carouselExampleControls");
+  button0.setAttribute("data-bs-slide","prev");
+  button0.appendChild(span3).classList.add("carousel-control-prev-icon","border","border-info");
+  button0.appendChild(span4).classList.add("visually-hidden");
+  span3.setAttribute("aria-hidden","true");
+  span4.innerHTML="Previous";
+
+  button1.setAttribute("type","button");
+  button1.setAttribute("data-bs-target","#carouselExampleControls");
+  button1.setAttribute("data-bs-slide","next");
+  button1.appendChild(span5).classList.add("carousel-control-next-icon","border","border-info");
+  button1.appendChild(span6).classList.add("visually-hidden");
+  span5.setAttribute("aria-hidden","true");
+  span6.innerHTML="Next";
+  
+} 
+
+  function onclick()
+  {
+   
+    const element = document.querySelectorAll(".clic");
+        for (var i = 0; i < element.length; i++) 
+        {
+          element[i].classList.remove("clic");
+        }
+  }
+ 
+let times = document.querySelectorAll('.pointer');
+var w = timestamp.split("T");
+times.forEach(time =>{
+    time.onclick =async function()
+    {
+        alert(this.innerHTML);
+        var time=0;
+        var q=[]
+        q[0]=w[0];
+        q[1]=this.innerHTML;
+        time = q.join(" ");
+        this.style.pointerEvents = 'none';
+        this.style.color = 'gray';
+        const doctorDocRefId = localStorage.getItem("doctorDocRefId");
+        const patientDocRefId = localStorage.getItem("userDocRefId");
+        var dayselect =  localStorage.getItem("dayName");
+        var timeSelect =localStorage.getItem("time");
+        const ref = collection(db, "doctor");
+        const refPatient = collection(db,"patient");
+        var ref1 = collection(db, "reservation");
+        const docRef = await addDoc(ref1, {
+          date:time,
+          doctorId:doctorDocRefId,
+          patientId:patientDocRefId,
+          reservationId:"q"
+        });
+        const updateTimestamp = await updateDoc(docRef, {
+          reservationId: docRef.id,
+        }).then(() => {
+          alert("reservation added successfully");
+        });
+        const doctorsDocs = await getDocs(ref);
+        const patientDocs = await  getDocs(refPatient);
+        const doctorDocRef = await doctorsDocs.docs.find(
+        (doc) => doc.id === doctorDocRefId     
+        ).ref;
+        const patientDocRef = await patientDocs.docs.find(
+        (doc) => doc.id === patientDocRefId     
+        ).ref;
+        const v = collection(doctorDocRef,"reservation");
+        const addressesCol = await setDoc(doc(v, docRef.id), { 
+          docRef:docRef.id
+        });
+          if (addressesCol) alert("Your reservation has been confirmed successfully");
+          const vPatient = collection(patientDocRef,"reservation");
+        const addressesCol1 = await setDoc(doc(vPatient, docRef.id), { 
+          docRef:docRef.id
+        });
+          if (addressesCol1) alert("Your reservation has been confirmed successfully");
+
+
+    }
+})
+   $(function () {
+ 
+      $("#rateYoo").rateYo({
+        rating: "0%",
+        precision: 0
+      });
+    });
+    var normalFill = $("#rateYoo").rateYo("option", "rating");
+    console.log("Lolllllllll");
+
+ 
+
+   </script>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+  </body>
+</html>

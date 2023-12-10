@@ -1,0 +1,343 @@
+<html>
+  <head>
+    <head>
+      <meta charset="utf-8" />
+      <!-- For Responsive mobile -->
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="shortcut icon" type="image/jpg" href="img/logo.png">
+      <link rel="stylesheet" href="css/bootstrap.min.css" />
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css"
+      />
+      <link rel="stylesheet" href="css/all.min.css" />
+      <link rel="stylesheet" href="css/style.css" />
+      <link rel="stylesheet" href="css/pharmcy.css" />
+      
+    </head>
+  </head>
+  <header>
+    <div class="container ">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light py-1 position-fixed fixed-top w-100">
+              <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-4">
+                        <li class="nav-item">
+                          <a class="nav-link active" href="index.html"><img src="images/logo/image.png"></a>
+                        </li>
+                    </ul> 
+                  <ul class="navbar-nav ms-auto  mb-lg-0">
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Home 
+                          </a>
+                          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="cancer.html">About Cancer</a></li>
+                            <li><a class="dropdown-item" href="doctors'page.html" target="_blank">Our doctors</a></li>
+                            <li><a class="dropdown-item" href="doctors'page.html">Online consultation</a></li>
+                            <li><a class="dropdown-item" href="doctors'page.html" target="_blank">Book now</a></li>
+                          </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#special_link" id="navbarDropdownMenuLink" id="special" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                               Specializations
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                              <li><a class="dropdown-item" href="cancerLung.html">Lung Cancer</a></li>
+                              <li><a class="dropdown-item" href="cancerLung.html">Bowel cancer</a></li>
+                              <li><a class="dropdown-item" href="cancerLung.html">Prostate and breast cancer</a></li>
+                              <li><a class="dropdown-item" href="#">Pancreas cancer</a></li>
+                              <li><a class="dropdown-item" href="#">Esophageal cancer</a></li>
+                              <li><a class="dropdown-item" href="#">Liver Cancer</a></li>
+                              <li><a class="dropdown-item" href="#">Bladder Cancer</a></li>
+                              <li><a class="dropdown-item" href="#">brain cancer</a></li>
+                              <li><a class="dropdown-item" href="#">bone cancer</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" href="#Services-link">Services</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Detection 
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                              <li><a class="dropdown-item" href="LungText.php" target="_blank">Lung Cancer</a></li>
+                              <li><a class="dropdown-item" href="Syndrome.php">Colon Cancer</a></li>
+                            </ul>
+                          </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" href="#">Success stories</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                          <a class="nav-link active" href="contactUs.html">Contact us</a>
+                        </li>
+                  </ul>
+                  <button type="button" class="btn btn-info mx-3"><a  id="btnBookDetect" href="doctors'page.html" target="_blank">Book now</a></button>
+    
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-info dropdown-toggle btn-hi" data-bs-toggle="dropdown" aria-expanded="false" id="nameUser">
+                      <p id="signOut" class="d-inline"></p>
+                      <script>
+                        var name = localStorage.getItem('nameUser')
+                        var n = name.split(" "); 
+                        document.getElementById('signOut').innerHTML ="Hi, "+n[0];
+                      </script>
+              
+                  </button>
+                  <ul class="dropdown-menu">
+                     <li><a id="signout" class="dropdown-item" href="Sign.html">Sign out</a></li>
+                  </ul>
+                </div>
+                </div>
+              </div>
+        </nav>
+    </div>
+    </header>
+  <body>
+    <section class="first">
+      <p class="container">
+        The easiest way to order and follow up with your monthly medications
+      </p>
+      <br /><br />
+      <div class="firstContent">
+        <div class="row container m-auto">
+          <div class="col-md-4">
+            <img src="img/icons/bolt-solid.svg" /><br />
+            <h6>instant-delivery</h6>
+          </div>
+          <div class="col-md-4">
+            <img src="img/icons/calendar-check-solid.svg" /><br />
+            <h6>Medicine Refill Reminder</h6>
+          </div>
+          <div class="col-md-4">
+            <img src="img/icons/house-chimney-medical-solid.svg" /><br />
+            <h6>Consult a Pharmacist</h6>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="second py-5 p-4">
+      <p>Order your medicines and all your pharmacy needs</p>
+      <div class="row container m-auto">
+        <div class="col-md-4">
+          <div class="imgCircle">
+            <img src="img/download.png" />
+          </div>
+          <br />
+          <form>
+            <input
+              type="file"
+              class="form-control"
+              id="image"
+              accept="image/*"
+            /><br />
+            <button type="button" class="form-control bg" id="uploadImage">
+              Upload
+            </button>
+          </form>
+        </div>
+        <div class="col-md-4">
+          <div class="imgCircle">
+            <img src="img/download (1).png" />
+          </div>
+          <br />
+          <form>
+            <input
+              type="text"
+              placeholder="Enter your product name"
+              class="form-control"
+              id="product"
+            /><br />
+            <button type="button" class="form-control bg" id="send">Send</button>
+          </form>
+        </div>
+        <div class="col-md-4 d-flex justify-content-center row">
+          <div class="imgCircle mb-4">
+            <i class="fa-solid fa-circle-info"></i>
+          </div><br/>
+          <label class="text-center"><a href="#" onclick="alert();">Teleconsultation</a></label>
+        </div>
+      </div>
+    </section>
+    
+    <section class="endPage p-4">
+      <div class="container px-4">
+          <div class="row">
+              <div class="col-sm-2">
+                  <h3>Medi Care</h3>
+                  <a href="#">About Us</a><br>
+                  <a href="#">Our Team</a><br>
+                  <a href="Contactus.html">Contact Us</a>
+              </div>
+              <div class="col-sm-2">
+                  <h3>Search By</h3>
+                  <a href="#">Speciality</a>
+              </div>
+              <div class="col-sm-3">
+                  <h3>Are You A Doctor ?</h3>
+                  <a href="Doctor Register.html">Join Multi Care Doctors</a>
+              </div>
+              <div class="col-sm-3">
+                  <h3>Need Help?</h3>
+                  <a href="Contactus.html">Contact Us</a><br>
+                  <a href="#">Terms Of Use</a><br>
+                  <a href="#">Privacy Policy</a><br>
+                  <a href="doctor.html">Doctors Privacy Policy</a>
+              </div>
+              <div class="col-sm-2">
+                  <button type="button" class="btn btn-light google-play"><img src="img/google-play-logo.svg"> Google Play</button><br><br>
+                  <button type="button" class="btn btn-light google-play"><img src="img/apple-logo.svg"> App Store</button><br><br>
+                  <a class="nav-icon mx-2" href="www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+                  <a class="nav-icon mx-2" href="www.instagram.com"><i class="fab fa-instagram"></i></a>
+                  <a class="nav-icon mx-2" href="www.twitter.com"><i class="fab fa-twitter"></i></a>    
+              </div>
+          </div>
+      </div>
+  </section>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
+      import {
+        getStorage,
+        ref,
+        uploadBytesResumable,
+        getDownloadURL,
+      } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-storage.js";
+      import {
+        getFirestore,
+        doc,
+        getDoc,
+        setDoc,
+        collection,
+        addDoc, query, where, getDocs
+      } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-firestore.js";
+      const firebaseConfig = {
+        apiKey: "AIzaSyBt4dnGARtW0fnugmHOopbNZyI9rfglz80",
+        authDomain: "graduation-project-a1c89.firebaseapp.com",
+        databaseURL:
+          "https://graduation-project-a1c89-default-rtdb.firebaseio.com",
+        projectId: "graduation-project-a1c89",
+        storageBucket: "graduation-project-a1c89.appspot.com",
+        messagingSenderId: "742395953187",
+        appId: "1:742395953187:web:48576f2e94aca323b9f196",
+        measurementId: "G-C6SSJZYJ0D",
+      };
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      const db = getFirestore(app);
+      const auth = getAuth(app);
+      const storage = getStorage();
+      var addressOrder,phoneOrder ;
+    
+      const currentTime = new Date();
+          var year = currentTime.getFullYear();
+          var month = currentTime.getMonth();
+          var day = currentTime.getDate();
+          var dash = "-";
+          var space = " ";
+          var colon = ":";
+       
+          var hour = currentTime.getHours();
+          var minutes = currentTime.getMinutes();
+          
+          var timestamp = year + dash + month + dash+ day+ space+ hour+ colon+ minutes;
+          var id = localStorage.getItem("userDocRefId");
+      const q = query(collection(db, "patient"), where("uId", "==", id));
+      const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => 
+        {
+          addressOrder=doc.data().address;
+          phoneOrder=doc.data().phone;
+        });
+        console.log(addressOrder);
+      var btnIn = document.getElementById("btn");
+      var ref1 = collection(db, "pharmacy");
+      var inImage = "u";
+     // Upload file and metadata to the object 'images/mountains.jpg'     
+  document.getElementById("uploadImage").addEventListener("click", async function upload() {
+  const metadata = { contentType: 'image/jpeg' };
+  const file = document.getElementById("image").src;
+  console.log("src",file);
+  // Upload file and metadata to the object 'images/mountains.jpg'
+  const storageRef = ref(storage, 'images/' + file.name);
+  const uploadTask = uploadBytesResumable(storageRef, file, metadata);
+ // Listen for state changes, errors, and completion of the upload.
+uploadTask.on('state_changed',
+  (snapshot) => {
+    // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+    console.log('Upload is ' + progress + '% done');
+    switch (snapshot.state) {
+      case 'paused':
+        console.log('Upload is paused');
+        break;
+      case 'running':
+        console.log('Upload is running');
+        break;
+    }
+  }, 
+  (error) => {
+    switch (error.code) {
+      case 'storage/unauthorized':
+        // User doesn't have permission to access the object
+        break;
+      case 'storage/canceled':
+        // User canceled the upload
+        break;
+      // ...
+      case 'storage/unknown':
+        // Unknown error occurred, inspect error.serverResponse
+        break;
+    }
+  }, 
+  () => {
+    // Upload completed successfully, now we can get the download URL
+    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+      console.log('File available at', downloadURL);
+    });
+  }
+);
+    const docRef1 = await addDoc(ref1, 
+    {
+      timestamp:timestamp,
+      AlRosheta: inImage,
+      address:addressOrder,
+      phone:phoneOrder,
+      type:"image",
+      patient_id:id
+    }).then(() => 
+    {
+      alert("successful operation");
+    });
+    });
+  
+      document.getElementById("send").addEventListener("click", async function (){
+      var inputProduct = document.getElementById("product").value;
+      const docRef = await addDoc(ref1, {
+        timestamp:timestamp,
+        product: inputProduct,
+        address:addressOrder,
+        phone:phoneOrder,
+        type:"medicineName",
+        patient_id:id
+      }).then(() => {
+        alert("successful operation");
+      });
+    });
+    </script>
+    <script src="js/uploadimage.js"></script>
+  </body>
+</html>

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/jpg" href="img/logo.png">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css"
+    />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/signUp.css" />
+  </head>
+ 
+
+  <body>
+    <section class="Signup">
+      <div class="contentDoctor">
+        <div class="paddDiv">
+          <div class="registerDoctor container">
+            <h3>Doctor Registration Form</h3>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="leftDiv">
+                  <div class="fname">
+                    <label>FULLNAME:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="lname"
+                    
+                      name="fullname"
+                      required
+                    />
+                  </div>
+                  <br />
+                  <div class="email">
+                    <label>e-mail:</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="email"
+                      id="email"
+                      required
+                    />
+                  </div>
+                  <br />
+                  <div class="pass">
+                    <label>PASSWORD:</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      name="password"
+                      id="password"
+                      required
+                    />
+                  </div>
+                  <br />
+                  <div class="country">
+                    <label>Age:</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      name="age"
+                      id="age"
+                      required
+                    />
+                  </div>
+                  <br />
+                  <div class="address">
+                    <label>address:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="address"
+                      id="address"
+                      required
+                    />
+                  </div>
+                  <br />
+                  <label for="inputState" class="form-label"
+                    >Specialization</label
+                  >
+                  <select
+                    id="inputState"
+                    class="form-select"
+                    name="specialty"
+                    required
+                  >
+                    <option selected>Select Specialty...</option>
+                    <option>Lung Cancer</option>
+                    <option>Bowel Cancer</option>
+                    <option>Prostate and breast cancer</option>
+                    <option>Pancreas cancer</option></select
+                  ><br />
+                  <div class="photo">
+                    <label>photo:</label>
+                    <input
+                      type="file"
+                      class="form-control"
+                      id="image"
+                      accept="image/*" 
+                      value="Change"
+                    />
+                  </div>
+                  <br />
+
+                  <label>Bio:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="bio"
+                    id="bio"
+                    required
+                  /><br><br>
+                  <div class="gender">
+                    <button
+                      type="button"
+                      class="btn btn-info"
+                      id="btn"
+                      name="send"
+                     onclick="sends();" 
+                    >
+                      REGISTER NOW
+                    </button>
+                  </div>
+                </div>
+                <div class="rightDiv">
+                  <div class="Phone">
+                    <label>Phone number:</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      name="phone"
+                      id="phone"
+                      required
+                    />
+                  </div>
+                  <br />
+                  <div>
+                    <label>UNIVERSITY:</label>
+                    <select
+                      class="form-select mb-4"
+                      name="university"
+                      id="university"
+                      required
+                    >
+                      <option selected>Select University...</option>
+                      <option>Cairo</option>
+                      <option>Ain-Shams</option>
+                      <option>Alexandria</option>
+                      <option>Asyut</option>
+                      <option>Banha</option>
+                      <option>Bani Sweif</option>
+                      <option>Faiyum</option>
+                      <option>Helwan</option>
+                      <option>Kafr El-Sheikh</option>
+                      <option>Mansoura</option>
+                      <option>Minya</option>
+                      <option>Menoufia</option>
+                      >
+                    </select>
+                  </div>
+                  <div class="price">
+                    <label>Price:</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      name="price"
+                      id="price"
+                      required
+                    />
+                  </div>
+                  <br />
+                  <div class="starttime">
+                    <label>Start Time:</label>
+                    <input
+                      type="time"
+                      class="form-control"
+                      name="startTime"
+                      id="startTime"
+                      required
+                    />
+                  </div>
+                  <br />
+                  <div class="endtime">
+                    <label>end Time:</label>
+                    <input
+                      type="time"
+                      class="form-control"
+                      name="endTime"
+                      id="endTime"
+                      required
+                    />
+                  </div>
+                  <br />
+                  <div class="degree">
+                    <label>certificates:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="degree"
+                      id="degree"
+                      required
+                    />
+                  </div>
+                  <br/>
+                  <div>
+                    <label>gender:</label>
+                    <select
+                      id="gender"
+                      class="form-select mb-4"
+                      name="gender"
+                      required
+                    >
+                      <option selected>Choose...</option>
+                      <option>Male</option>
+                      <option>Female</option>
+                    </select>
+                  </div>
+                  <div class="DaysOfWork">
+                    <label>RegisterNumber:</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      name="endTime"
+                      id="dayofwork"
+                      required
+                    />
+                  </div>
+                  </div>
+                  <br/>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+      import { getDatabase } from 'https://www.gstatic.com/firebasejs/9.6.8/firebase-database.js'
+      import {
+        getFirestore,
+        doc,
+        getDoc,
+        setDoc,
+        collection,
+        addDoc,
+        updateDoc,
+        serverTimestamp
+      } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-firestore.js";
+      import {
+        getStorage, ref, uploadBytesResumable, getDownloadURL
+      } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-storage.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyBt4dnGARtW0fnugmHOopbNZyI9rfglz80",
+        authDomain: "graduation-project-a1c89.firebaseapp.com",
+        databaseURL:
+          "https://graduation-project-a1c89-default-rtdb.firebaseio.com",
+        projectId: "graduation-project-a1c89",
+        storageBucket: "graduation-project-a1c89.appspot.com",
+        messagingSenderId: "742395953187",
+        appId: "1:742395953187:web:48576f2e94aca323b9f196",
+        measurementId: "G-C6SSJZYJ0D",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      const db = getFirestore(app);
+      const auth = getAuth(app);
+      const storage = getStorage(app);
+      const database = getDatabase(app);
+
+      var btnIn = document.getElementById("btn");
+      var inImage="u";
+      function upload(){
+        const metadata = {
+              contentType: 'image.jpeg'
+            };
+      const file = document.getElementById('image').src;
+      const storageRef = ref(storage, 'patient/' + file.name);
+      const uploadTask = uploadBytesResumable(storageRef, file, metadata);
+      // Listen for state changes, errors, and completion of the upload.
+      uploadTask.on('state_changed',
+        (snapshot) => {
+          // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log('Upload is ' + progress + '% done');
+          switch (snapshot.state) {
+            case 'paused':
+              console.log('Upload is paused');
+              break;
+            case 'running':
+              console.log('Upload is running');
+              break;
+          }
+        },
+        (error) => {
+          // A full list of error codes is available at
+          // https://firebase.google.com/docs/storage/web/handle-errors
+          switch (error.code) {
+            case 'storage/unauthorized':
+              // User doesn't have permission to access the object
+              console.log("error=" )
+              break;
+            case 'storage/canceled':
+              // User canceled the upload
+              break;
+            // ...
+            case 'storage/unknown':
+              // Unknown error occurred, inspect error.serverResponse
+              break;
+          }
+        },
+        () => {
+          // Upload completed successfully, now we can get the download URL
+          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => 
+          {
+            inImage=downloadURL;
+            console.log('File available at', downloadURL);
+          });
+        }
+      );
+    }
+      
+    ////////////On Click////////
+    const currentTime = new Date();
+          var year = currentTime.getFullYear();
+          var month = currentTime.getMonth();
+          var day = currentTime.getDate();
+          var dash = "-";
+          var space = " ";
+          var colon = ":";
+          var dot = "."
+          var hour = currentTime.getHours();
+          var minutes = currentTime.getMinutes();
+          var seconds = currentTime.getSeconds();
+          var millsecond = currentTime.getMilliseconds();
+          var timestamp = year + dash + month + dash+ day+ space+ hour+ colon+ minutes+ colon+ seconds+dot+millsecond;
+          
+      btnIn.addEventListener("click", async function () {
+        upload();      //upload Image
+        var ref = collection(db, "doctor");
+        var ref1 = collection(db, "user");
+        var ref2 = collection(db,"Phone");
+        var ageInput = document.getElementById("age");
+        var in1 = ageInput.value;
+        var emailInput = document.getElementById("email");
+        var in2 = emailInput.value;
+        var fullnameInput = document.getElementById("lname");
+        var in3 = fullnameInput.value;
+        var specialtyInput = document.getElementById("inputState");
+        var in4 = specialtyInput.value;
+        var universityInput = document.getElementById("university");
+        var in5 = universityInput.value;
+        var genderInput = document.getElementById("gender");
+        var in6 = genderInput.value;
+        var phoneInput = document.getElementById("phone");
+        var in7 = phoneInput.value;
+        var passwordInput = document.getElementById("password");
+        var in8 = passwordInput.value;
+        var addressInput = document.getElementById("address");
+        var in9 = addressInput.value;
+        var priceInput = document.getElementById("price");
+        var in10 = priceInput.value;
+        var startTimeInput = document.getElementById("startTime");
+        var in11 = startTimeInput.value;
+        var endTimeInput = document.getElementById("endTime");
+        var in12 = endTimeInput.value;
+        var dayofworkInput = document.getElementById("dayofwork");
+        var in13 = dayofworkInput.value;
+        var degreeInput = document.getElementById("degree");
+        var in14 = degreeInput.value;
+        var bioInput = document.getElementById("bio");
+        var in15 = bioInput.value;
+        
+        createUserWithEmailAndPassword(auth, in2, in8)
+          .then((userCredential) => {
+            //Signed in
+            const user = userCredential.user;
+            console.log("user" + user);
+          })
+          .catch(function (error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            if (errorCode == "auth/weak-password") {
+              alert("The password is too weak.");
+            } else if (errorCode == "auth/email-already-in-use") {
+              alert("The email is already taken.");
+            } else if (errorCode == "auth/weak-password") {
+              alert("Password is weak");
+            } else {
+              alert("error = " + errorMessage);
+            }
+            console.log("error = " + error);
+          });
+        const docRef = await addDoc(ref, {
+          age: in1,
+          email: in2,
+          fullName: in3,
+          gender: in6,
+          phone: in7,
+          address: in9,
+          specialization: in4,
+          university: in5,
+          Bio:in15,
+          price: in10+" "+"L.E",
+          startTime:"1990-02-02"+" "+in11,
+          endTime: "1990-02-02"+" "+in12,
+          createdAt:timestamp,
+          image: inImage,
+          regisNumber:in13,
+          certificates:in14,
+          uId:"aa",
+          inCall:false,
+          allRateNumber:0,
+          allRateValue:0.0000001,
+          token:null,
+          rate:0.000001
+        });
+        const updateTimestamp = await updateDoc(docRef, {
+          uId: docRef.id
+        });
+        localStorage.setItem('uIdDoctor',docRef.id);
+        await setDoc(doc(db, "user",docRef.id),{
+          type: "doctor",
+          name:in3,
+          gender:in6,
+          email: in2,
+          uId: docRef.id,
+          status:"online"
+        });
+        await setDoc(doc(db, "Phone",docRef.id),{
+         phone:in7,
+         uId:docRef.id
+        }).then(() => {
+          alert("Data added successfully");
+          window.location = "profile.html";
+        });
+      });
+    </script>
+    <script src="js/profile.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+     
+  </body>
+</html>
